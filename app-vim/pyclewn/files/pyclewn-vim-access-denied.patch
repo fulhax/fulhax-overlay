@@ -1,0 +1,14 @@
+--- setup.py-orig	2013-10-09 17:59:02.055230261 +0200
++++ setup.py	2013-10-09 17:59:38.293151135 +0200
+@@ -83,9 +83,9 @@
+             pyclewn_install.substitute_autoload('runtime', mapping)
+ 
+         print 'Vim user data files location: "%s"' % vimdir
+-        pyclewn_install.vim_features()
++        #pyclewn_install.vim_features()
+         _install.run(self)
+-        pyclewn_install.build_vimhelp()
++        #pyclewn_install.build_vimhelp()
+ 
+ def update_version(filename):
+     """Update the version number in the content of filename."""
