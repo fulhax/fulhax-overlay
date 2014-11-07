@@ -25,6 +25,10 @@ src_unpack() {
 	mv ${WORKDIR}/${P}.py3 ${WORKDIR}/${P}
 }
 
-src_install() {
-	dodir -r /usr/share/vim/vimfiles/doc/tags
+src_prepare() {
+	PATCHES=(
+		"${FILESDIR}/${PN}-vim-access-denied.patch"
+	)
+
+	distutils-r1_python_prepare_all
 }
