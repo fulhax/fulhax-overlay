@@ -3,7 +3,7 @@
 @@ -83,9 +83,9 @@
              pyclewn_install.substitute_autoload('runtime', mapping)
  
-         print 'Vim user data files location: "%s"' % vimdir
+         print('Vim user data files location: "%s"' % vimdir)
 -        pyclewn_install.vim_features()
 +        #pyclewn_install.vim_features()
          _install.run(self)
