@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 eutils libtool toolchain-funcs autotools
+inherit git-2 eutils libtool toolchain-funcs autotools flag-o-matic
 
 DESCRIPTION="BitTorrent library written in C++ for *nix"
 HOMEPAGE="http://libtorrent.rakshasa.no/"
@@ -22,7 +22,9 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 src_prepare() {
-#	epatch "${FILESDIR}"/download_constructor.diff
+	#	epatch "${FILESDIR}"/download_constructor.diff
+	append-cxxflags -std=c++11 -fno-strict-aliasing
+
 	eautoreconf
 	elibtoolize
 }

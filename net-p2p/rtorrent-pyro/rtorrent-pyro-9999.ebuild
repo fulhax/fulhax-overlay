@@ -3,7 +3,7 @@
 
 EAPI=4
 
-inherit eutils git-2 autotools
+inherit eutils git-2 autotools flag-o-matic
 
 DESCRIPTION="BitTorrent Client using libtorrent - with Pyroscope patches"
 HOMEPAGE="http://libtorrent.rakshasa.no/"
@@ -38,6 +38,7 @@ src_prepare() {
 	# bug #358271
 	epatch "${FILESDIR}"/${PN}-0.9.1-ncurses.patch
 
+	append-cxxflags -std=c++11 -fno-strict-aliasing
 
 	# upstream forgot to include
 	cp ${FILESDIR}/rtorrent.1 ${S}/doc/ || die
