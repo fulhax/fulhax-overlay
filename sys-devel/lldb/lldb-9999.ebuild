@@ -6,12 +6,12 @@ EAPI=5
 
 PYTHON_COMPAT=( python{2_6,2_7} pypy{1_9,2_0} )
 
-inherit cmake-utils subversion eutils multilib python-r1
+inherit cmake-utils git-r3 eutils multilib python-r1
 
 DESCRIPTION="LLDB is a next generation, high-performance debugger"
 HOMEPAGE="http://lldb.llvm.org/"
 SRC_URI=""
-ESVN_REPO_URI="http://llvm.org/svn/llvm-project/lldb/trunk"
+EGIT_REPO_URI="http://llvm.org/git/lldb.git"
 
 # check http://lab.llvm.org:8011/builders/lldb-x86_64-linux/
 # when build fails
@@ -22,11 +22,13 @@ KEYWORDS="~amd64"
 IUSE="debug +python"
 
 DEPEND="${PYTHON_DEPS}"
-RDEPEND="~sys-devel/llvm-${PV}[debug=]
-	~sys-devel/clang-${PV}[debug=]
+RDEPEND="sys-devel/llvm-9999[debug=]
+	sys-devel/clang-9999[debug=]
+	dev-lang/swig
+	dev-libs/libedit
 	${PYTHON_DEPS}"
 
-S="${WORKDIR}/lldb"
+#S="${WORKDIR}/lldb"
 
 src_prepare() {
 	sed -i "s/lib/$(get_libdir)/" scripts/lldb_python_module.cmake
@@ -60,6 +62,8 @@ src_configure() {
 	sed -e 's/lldbPluginObjectFileMachO//' \
 		-e 's/lldbPluginProcessMachCore//' \
 		-i source/CMakeLists.txt
+
+	sed -i 's/^.*ClangConfig\.cmake.*$//' CMakeLists.txt
 
 	# Setup the search path to include the Prefix includes
 	if use prefix ; then
