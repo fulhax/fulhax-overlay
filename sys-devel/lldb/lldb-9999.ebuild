@@ -22,8 +22,8 @@ KEYWORDS="~amd64"
 IUSE="debug +python"
 
 DEPEND="${PYTHON_DEPS}"
-RDEPEND="sys-devel/llvm-9999[debug=]
-	sys-devel/clang-9999[debug=]
+RDEPEND="=sys-devel/llvm-9999[debug=]
+	=sys-devel/clang-9999[debug=]
 	dev-lang/swig
 	dev-libs/libedit
 	${PYTHON_DEPS}"
