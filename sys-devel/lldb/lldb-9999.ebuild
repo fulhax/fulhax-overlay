@@ -6,12 +6,15 @@ EAPI=5
 
 PYTHON_COMPAT=( python{2_6,2_7} pypy{1_9,2_0} )
 
-inherit cmake-utils git-r3 eutils multilib python-r1
+inherit cmake-utils subversion eutils multilib python-r1
 
 DESCRIPTION="LLDB is a next generation, high-performance debugger"
 HOMEPAGE="http://lldb.llvm.org/"
 SRC_URI=""
-EGIT_REPO_URI="http://llvm.org/git/lldb.git"
+#EGIT_REPO_URI="http://llvm.org/git/lldb.git"
+
+ESVN_REPO_URI="http://llvm.org/svn/llvm-project/lldb/trunk/"
+ESVN_PROJECT="${PN}"
 
 # check http://lab.llvm.org:8011/builders/lldb-x86_64-linux/
 # when build fails
@@ -19,13 +22,14 @@ EGIT_REPO_URI="http://llvm.org/git/lldb.git"
 LICENSE="UoI-NCSA"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="debug +python"
+IUSE="debug +python +shared"
 
 DEPEND="${PYTHON_DEPS}"
 RDEPEND="~sys-devel/llvm-9999[debug=]
 	~sys-devel/clang-9999[debug=]
 	dev-lang/swig
 	dev-libs/libedit
+	dev-libs/libffi
 	${PYTHON_DEPS}"
 
 #S="${WORKDIR}/lldb"
@@ -48,20 +52,28 @@ src_configure() {
 	append-cxxflags "-std=c++11" || die
 	append-ldflags "-Wl,-L`llvm-config --libdir`" || die
 
+	local _libffi_include=$(pkg-config libffi --cflags-only-I | sed 's/-I//')
 	local mycmakeargs="
 		-DCMAKE_SYSTEM_NAME="Linux"
 		-DCMAKE_INSTALL_PREFIX=${EPREFIX}/usr/
 		-DLLDB_PATH_TO_LLVM_BUILD=${EPREFIX}/usr/
 		-DLLDB_PATH_TO_CLANG_BUILD=${EPREFIX}/usr/
-		-DSHARED_LIBRARY=ON
+		-DLLVM_ENABLE_ASSERTIONS=OFF
+		-DLLVM_ENABLE_FFI=ON
+		-DFFI_INCLUDE_PATH=$_libffi_include
 		${DEBUG_FLAGS}"
 
-	# shared library hack
-	sed -i 's/^.*Mach-O.*$//' source/Plugins/ObjectFile/CMakeLists.txt
-	sed -i 's/^.*mach-core.*$//' source/Plugins/Process/CMakeLists.txt
-	sed -e 's/lldbPluginObjectFileMachO//' \
-		-e 's/lldbPluginProcessMachCore//' \
-		-i source/CMakeLists.txt
+	if use shared; then
+		mycmakeargs="${mycmakeargs} -DSHARED_LIBRARY=ON"
+
+		# shared library hack
+		sed -i 's/^.*Mach-O.*$//' source/Plugins/ObjectFile/CMakeLists.txt
+		sed -i 's/^.*mach-core.*$//' source/Plugins/Process/CMakeLists.txt
+		sed -e 's/lldbPluginObjectFileMachO//' \
+			-e 's/lldbPluginProcessMachCore//' \
+			-i source/CMakeLists.txt
+	fi
+
 
 	sed -i 's/^.*ClangConfig\.cmake.*$//' CMakeLists.txt
 
