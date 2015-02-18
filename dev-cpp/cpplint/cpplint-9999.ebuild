@@ -6,11 +6,11 @@ EAPI=5
 
 PYTHON_COMPAT=( python2_{6,7} )
 
-inherit python-single-r1 subversion
+inherit python-single-r1 git-r3
 
 DESCRIPTION="Checker to make sure a C++ file follows Google's C++ style guide"
 HOMEPAGE="https://code.google.com/p/google-styleguide"
-ESVN_REPO_URI="http://google-styleguide.googlecode.com/svn/trunk/${PN}"
+EGIT_REPO_URI="https://github.com/tkruse/${PN}"
 
 LICENSE="cpplint"
 SLOT="0"
