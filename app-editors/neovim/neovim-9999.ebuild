@@ -23,7 +23,7 @@ RDEPEND="
 "
 DEPEND="
 	${RDEPEND}
-	>=dev-libs/libuv-0.11.29
+	>=dev-libs/libuv-1.2.0
 	|| (
 		dev-lua/lpeg
 		dev-lua/lulpeg[lpeg_replace]
