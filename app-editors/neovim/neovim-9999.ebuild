@@ -29,7 +29,7 @@ DEPEND="
 		dev-lua/lulpeg[lpeg_replace]
 	)
 	dev-lang/luajit:2
-	dev-libs/msgpack
+	>=dev-libs/msgpack-0.5.9
 	dev-cpp/unibilium
 	dev-cpp/libtermkey
 	dev-lua/messagepack
