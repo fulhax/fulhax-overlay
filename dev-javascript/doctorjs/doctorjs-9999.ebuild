@@ -31,6 +31,7 @@ src_compile() {
 }
 
 src_install() {
+	sed -i "s#util.puts#console.log#g" bin/jsctags.js
 	sed -i "s#PREFIX=/usr/local#PREFIX=/${D}/${DESTTREE}#" Makefile
 	make install
 }
