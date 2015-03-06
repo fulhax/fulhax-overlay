@@ -25,7 +25,7 @@ src_prepare() {
 }
 
 src_install() {
-	sed -i "s#/usr/local/#${DESTTREE}/#" bin/gjstags
+	echo "exec java -Xmx2000m -jar ${DESTTREE}/bin/gjstags.jar \$@ 2> /dev/null" > bin/gjstags
 	dobin bin/gjstags
 	dobin bin/gjstags.jar
 	dobin libs/compiler.jar
