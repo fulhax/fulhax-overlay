@@ -32,6 +32,7 @@ DEPEND="
 	=dev-libs/msgpack-9999
 	dev-cpp/unibilium
 	dev-cpp/libtermkey
+	dev-cpp/libvterm
 	dev-lua/messagepack
 "
 
