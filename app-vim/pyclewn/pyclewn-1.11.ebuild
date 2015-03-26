@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="|| ( >=app-editors/vim-7.3 >=app-editors/gvim-7.0[netbeans] )"
+DEPEND="|| ( >=app-editors/vim-7.3[netbeans] >=app-editors/gvim-7.0[netbeans] )"
 RDEPEND="${DEPEND} sys-devel/gdb"
 
 src_unpack() {
