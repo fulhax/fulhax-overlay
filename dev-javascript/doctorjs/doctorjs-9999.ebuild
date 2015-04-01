@@ -10,18 +10,21 @@ HOMEPAGE="http://drjs.org"
 EGIT_REPO_URI="https://github.com/mozilla/doctorjs"
 EGIT_HAS_SUBMODULES="1"
 
-inherit git-2
+inherit git-2 eutils
 
 LICENSE="MPL-1.1"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug"
+IUSE="debug +ignore"
 
 DEPEND="net-libs/nodejs"
 RDEPEND="${DEPEND}"
 
-src_configure() {
-	# nothing to configure
+src_prepare() {
+	if use ignore; then
+		epatch "${FILESDIR}"/0001-Add-ignore-commandline-flag.patch
+	fi
+
 	return
 }
 

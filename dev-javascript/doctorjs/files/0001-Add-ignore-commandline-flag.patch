@@ -1,0 +1,45 @@
+
+From 3fc1bd0640f3e4f110d0bf16608307537fbceff2 Mon Sep 17 00:00:00 2001
+From: Manav Rathi <mx4492@gmail.com>
+Date: Mon, 30 Jul 2012 17:42:08 +0530
+Subject: [PATCH] Add --ignore commandline flag
+
+This is meant as a workaround for Issue #14: Analyzing jquery does not end
+(https://github.com/mozilla/doctorjs/issues/14).
+---
+ bin/jsctags.js |    7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/bin/jsctags.js b/bin/jsctags.js
+index 73332e7..d8bef4c 100755
+--- a/bin/jsctags.js
++++ b/bin/jsctags.js
+@@ -60,13 +60,14 @@ function usage() {
+              "require.paths)")
+     util.puts("    -W, --warning level   set log level (debug/info/warn/" +
+              "error, default error)");
++    util.puts("        --ignore regex    ignore files matching regex");
+     process.exit(1);
+ }
+ 
+ var opts;
+ try {
+     opts = getopt("help|h", "jsonp|j=s", "libroot|L=s@", "oneprog", "output|o|f=s",
+-                  "sort|=s", "warning|W=s");
++                  "sort|=s", "warning|W=s", "ignore|=s");
+ } catch (e) {
+     util.puts(e);
+     usage();
+@@ -178,6 +179,10 @@ function processPath(p) {
+     }
+     idsSeen[id] = true;
+ 
++    if (opts.ignore && p.match(opts.ignore)) {
++        return;
++    }
++
+     var ext = path.extname(p).toLowerCase();
+     if (st.isDirectory()) {
+         fs.readdirSync(p).forEach(function(filename) {
+-- 
+1.7.9.5
