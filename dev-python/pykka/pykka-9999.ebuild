@@ -1,4 +1,4 @@
-EAPI="3"
+EAPI=5
 EGIT_REPO_URI="git://github.com/jodal/pykka.git"
 PYTHON_DEPEND="2"
 

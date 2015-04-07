@@ -1,4 +1,4 @@
-EAPI="3"
+EAPI=5
 EGIT_REPO_URI="git://github.com/mopidy/mopidy.git"
 EGIT_PATCHES="${FILESDIR}/install.patch"
 PYTHON_DEPEND="2"

@@ -18,7 +18,7 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="
-	app-admin/eselect-vi
+	app-eselect/eselect-vi
 	sys-libs/ncurses
 "
 DEPEND="

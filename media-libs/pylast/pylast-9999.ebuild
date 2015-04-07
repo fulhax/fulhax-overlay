@@ -1,4 +1,4 @@
-EAPI="3"
+EAPI=5
 ESVN_REPO_URI="http://pylast.googlecode.com/svn/trunk/"
 PYTHON_DEPEND="2"
 

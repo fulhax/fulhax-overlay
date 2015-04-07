@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-1.7.21.ebuild,v 1.1 2014/06/29 00:42:47 tetromino Exp $
 
-EAPI="5"
+EAPI=5
 
 AUTOTOOLS_AUTORECONF=1
 PLOCALES="ar bg ca cs da de el en en_US eo es fa fi fr he hi hr hu it ja ko lt ml nb_NO nl or pa pl pt_BR pt_PT rm ro ru sk sl sr_RS@cyrillic sr_RS@latin sv te th tr uk wa zh_CN zh_TW"

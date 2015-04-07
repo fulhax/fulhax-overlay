@@ -1,4 +1,4 @@
-EAPI="3"
+EAPI=5
 EGIT_REPO_URI="https://github.com/mopidy/pyspotify.git"
 PYTHON_DEPEND="2"
 
