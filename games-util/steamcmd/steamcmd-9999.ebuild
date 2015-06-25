@@ -19,6 +19,7 @@ RDEPEND=""
 GAMES_USER="steam"
 dir=${GAMES_PREFIX_OPT}/${GAMES_USER}/${PN}
 GAMES_PREFIX=${GAMES_PREFIX_OPT}/${GAMES_USER}
+S="${WORKDIR}"
 
 src_install() {
 	insinto "${dir}"
