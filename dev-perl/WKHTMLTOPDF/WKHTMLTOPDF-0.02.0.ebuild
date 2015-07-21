@@ -16,6 +16,6 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-	>=virtual/perl-Module-Build-0.35"
+	dev-perl/Module-Build"
 
 SRC_TEST="do"

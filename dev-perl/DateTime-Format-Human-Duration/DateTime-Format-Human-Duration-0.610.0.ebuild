@@ -16,7 +16,8 @@ IUSE=""
 
 RDEPEND="dev-perl/DateTime"
 
-DEPEND="virtual/perl-Module-Build
+DEPEND="
+	dev-perl/Module-Build
 	virtual/perl-File-Temp
 	${RDEPEND}"
 
