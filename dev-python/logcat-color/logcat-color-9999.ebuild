@@ -12,5 +12,5 @@ SLOT="0"
 KEYWORDS=""
 IUSE="debug"
 
-RDEPEND=""
+RDEPEND="dev-python/colorama"
 DEPEND="${RDEPEND}"
