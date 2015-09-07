@@ -5,7 +5,7 @@
 EAPI=5
 inherit eutils git-2
 
-EGIT_REPO_URI="git@github.com:qw3rtman/gg.git"
+EGIT_REPO_URI="git://github.com/qw3rtman/gg.git"
 
 DESCRIPTION="Git Goodies: At-A-Glance, Efficient, and Aesthetically Pleasing Git Shortcuts"
 HOMEPAGE="https://git.io/gitgoodies"
