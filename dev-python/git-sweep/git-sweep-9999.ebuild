@@ -15,5 +15,5 @@ SLOT="0"
 KEYWORDS="git"
 IUSE=""
 
-DEPEND="dev-vcs/git"
+DEPEND="dev-vcs/git dev-python/git-python"
 RDEPEND="${DEPEND}"
