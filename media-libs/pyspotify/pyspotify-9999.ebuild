@@ -1,10 +1,10 @@
 EAPI=5
-EGIT_REPO_URI="https://github.com/mopidy/pyspotify.git"
+EGIT_REPO_URI="git://github.com/mopidy/pyspotify.git"
 PYTHON_DEPEND="2"
 
-EGIT_MASTER="v2.x/develop"
-EGIT_BRANCH="v1.x/develop"
-EGIT_HAS_SUBMODULES="of course!"
+EGIT_MASTER="v2.x/master"
+EGIT_BRANCH="v2.x/master"
+# EGIT_HAS_SUBMODULES="of course!"
 
 inherit eutils flag-o-matic distutils git-2
 
