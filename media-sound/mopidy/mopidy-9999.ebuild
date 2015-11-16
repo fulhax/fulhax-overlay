@@ -1,16 +1,17 @@
 EAPI=5
+
+inherit eutils distutils git-2
+
 EGIT_REPO_URI="git://github.com/mopidy/mopidy.git"
 EGIT_PATCHES="${FILESDIR}/install.patch"
 PYTHON_DEPEND="2"
 
-inherit eutils distutils git-2
-
 # EGIT_MASTER="develop"
 # EGIT_BRANCH="develop"
 
-EGIT_MASTER="master"
-EGIT_BRANCH="master"
-EGIT_HAS_SUBMODULES="of course!"
+# EGIT_MASTER="master"
+# EGIT_BRANCH="master"
+# EGIT_HAS_SUBMODULES="of course!"
 
 DESCRIPTION="MPD server for Spotify service."
 HOMEPAGE="http://www.mopidy.com/"
