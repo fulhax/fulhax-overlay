@@ -16,7 +16,7 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="
-	cmake
+	dev-util/cmake
 "
 DEPEND="
 	${RDEPEND}
