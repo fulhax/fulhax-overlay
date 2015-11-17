@@ -8,7 +8,7 @@ inherit git-r3
 
 DESCRIPTION="A colorized Android logcat"
 HOMEPAGE="http://zserge.com/blog/logdog.html"
-EGIT_REPO_URL="https://bitbucket.org/zserge/logdog"
+EGIT_REPO_URI="https://bitbucket.org/zserge/logdog"
 
 LICENSE="MIT"
 SLOT="0"
