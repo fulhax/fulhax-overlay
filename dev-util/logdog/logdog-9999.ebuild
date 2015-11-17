@@ -4,11 +4,11 @@
 
 EAPI=5
 
-inherit git-r3
+inherit mercurial
 
 DESCRIPTION="A colorized Android logcat"
 HOMEPAGE="http://zserge.com/blog/logdog.html"
-EGIT_REPO_URI="http://bitbucket.org/zserge/logdog"
+EHG_REPO_URI="https://bitbucket.org/zserge/logdog"
 
 LICENSE="MIT"
 SLOT="0"
@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${RDEPEND}"
 
 src_install() {
 	dobin logdog
