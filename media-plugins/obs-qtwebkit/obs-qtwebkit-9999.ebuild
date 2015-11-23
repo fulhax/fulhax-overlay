@@ -24,8 +24,8 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	insinto /usr/share/obs/obs-plugins/obs-qtwebkit
-	doins "${FILESDIR}"/build/qtwebkit-browser.so
-	doins "${FILESDIR}"/build/renderer
+	doins build/qtwebkit-browser.so
+	doins build/renderer
 	insinto /usr/share/obs/obs-plugins/obs-qtwebkit/locale
-	doins "${FILESDIR}"/locale/*.ini
+	doins locale/*.ini
 }
