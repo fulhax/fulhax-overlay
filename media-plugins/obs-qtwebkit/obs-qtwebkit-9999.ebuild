@@ -27,5 +27,5 @@ src_install() {
 	doins build/qtwebkit-browser.so
 	doins build/renderer
 	insinto /usr/share/obs/obs-plugins/obs-qtwebkit/locale
-	doins locale/*.ini
+	doins data/locale/*.ini
 }
