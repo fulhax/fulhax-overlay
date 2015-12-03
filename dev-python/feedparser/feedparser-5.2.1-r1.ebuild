@@ -30,7 +30,7 @@ PATCHES=(
 
 python_prepare_all() {
 	mv feedparser/sgmllib3.py feedparser/_feedparser_sgmllib.py || die
-	sed -i -e 's/"drv_libxml2"//' feedparser/api.py || die "Sed failed"
+	sed -i -e 's/"drv_libxml2"//' feedparser/feedparser.py || die "Sed failed"
 	distutils-r1_python_prepare_all
 }
 
