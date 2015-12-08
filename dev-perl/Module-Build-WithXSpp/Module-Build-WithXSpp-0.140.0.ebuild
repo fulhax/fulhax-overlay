@@ -20,7 +20,7 @@ RDEPEND="
 	virtual/perl-Digest-MD5
 	virtual/perl-ExtUtils-CBuilder
 	>=virtual/perl-ExtUtils-ParseXS-2.220.500
-	>=dev-perl/perl-Module-Build-0.260.0
+	>=dev-perl/Module-Build-0.260.0
 "
 
 DEPEND="${RDEPEND}

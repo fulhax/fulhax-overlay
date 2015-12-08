@@ -17,7 +17,7 @@ IUSE="test"
 RDEPEND="dev-perl/Capture-Tiny"
 
 DEPEND="${RDEPEND}
-	>=dev-perl/perl-Module-Build-0.420.0
+	>=dev-perl/Module-Build-0.420.0
 	test? (
 		virtual/perl-autodie
 		virtual/perl-Test-Simple
