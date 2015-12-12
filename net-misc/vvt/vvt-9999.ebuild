@@ -23,9 +23,9 @@ RDEPEND=""
 export GOPATH="${S}"
 
 src_compile(){
-	go build -o vvt -v -x ${GO_PN}/${d} || die
+	make || die
 }
 
 src_install(){
-	dobin vvt
+	dobin build/vvt
 }
