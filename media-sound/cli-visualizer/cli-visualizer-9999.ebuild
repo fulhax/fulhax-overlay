@@ -3,7 +3,6 @@ EAPI=5
 inherit eutils distutils git-2
 
 EGIT_REPO_URI="git://github.com/dpayne/cli-visualizer.git"
-PYTHON_DEPEND="2"
 
 DESCRIPTION="CLI based audio visualizer"
 HOMEPAGE="https://github.com/dpayne/cli-visualizer"
