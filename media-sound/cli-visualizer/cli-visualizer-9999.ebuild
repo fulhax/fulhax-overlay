@@ -17,3 +17,7 @@ RDEPEND="
 	>=sys-libs/ncurses-5.0
 "
 DEPEND="${RDEPEND}"
+
+src_install() {
+	dobin build/vis
+}
