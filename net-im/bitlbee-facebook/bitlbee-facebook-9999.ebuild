@@ -29,5 +29,7 @@ src_compile() {
 }
 
 src_install() {
-    make install
+    insinto /usr/lib/bitlbee
+    doins facebook/.libs/facebook.la
+    doins facebook/.libs/facebook.so
 }
