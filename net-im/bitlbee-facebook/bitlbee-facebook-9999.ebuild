@@ -16,5 +16,18 @@ SLOT="0"
 KEYWORDS=""
 IUSE="debug"
 
-DEPEND="net-im/bitlbee"
+DEPEND="
+    net-im/bitlbee
+    >=dev-libs/json-glib-0.14.0
+"
 RDEPEND="${DEPEND}"
+
+src_compile() {
+    ./autogen.sh
+    ./configure --prefix=/usr
+    make
+}
+
+src_install() {
+    make install
+}
