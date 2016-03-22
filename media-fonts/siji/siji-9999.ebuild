@@ -14,5 +14,5 @@ SLOT="0"
 KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86"
 IUSE=""
 
-FONT_S="${WORKDIR}/pcf"
+FONT_S="${WORKDIR}/${P}/pcf"
 FONT_SUFFIX="pcf"
