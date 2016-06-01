@@ -28,5 +28,5 @@ DEPEND="
 
 src_install() {
 	dobin bin/*
-	dodoc man/*
+	dodoc man/man1/*
 }
