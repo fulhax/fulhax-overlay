@@ -21,6 +21,7 @@ DEPEND="
 	>=dev-python/pathlib-1.0.1
 	>=dev-python/ansicolor-0.2.4
 	>=dev-python/pyyaml-3.11
+	=dev-python/enum34-1.0.4
 "
 RDEPEND="${DEPEND}"
 
