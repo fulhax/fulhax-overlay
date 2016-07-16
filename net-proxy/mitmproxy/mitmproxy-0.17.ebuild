@@ -68,3 +68,7 @@ DEPEND="${RDEPEND}
 		dev-python/pytz
 		dev-python/beautifulsoup:4[${PYTHON_USEDEP}]
 	)"
+
+src_install(){
+	rm -rf netlib	
+}
