@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>radhermit@gentoo.org</email>
+		<name>Tim Harder</name>
+	</maintainer>
+  <use>
+    <flag name="contentviews">Enable the Flow View, to inspect/manipulate a single flow.</flag>
+  </use>
+	<upstream>
+		<remote-id type="pypi">mitmproxy</remote-id>
+    	<remote-id type="github">mitmproxy/mitmproxy</remote-id>
+	</upstream>
+</pkgmetadata>
