@@ -25,6 +25,6 @@ src_install() {
 
 	insinto /usr/share/themes/numix
 	for j in ${folders} ; do
-		doins -r ${j} || die
+		doins -r ${P}/${j} || die
 	done
 }
