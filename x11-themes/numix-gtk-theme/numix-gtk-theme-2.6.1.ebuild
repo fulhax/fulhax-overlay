@@ -18,6 +18,11 @@ RDEPEND=""
 
 S=${WORKDIR}
 
+src_prepare() {
+	cd ${P}
+	make
+}
+
 src_install() {
 	local folders=
 	use gtk2 && folders+=" gtk-2.0 metacity-1"
