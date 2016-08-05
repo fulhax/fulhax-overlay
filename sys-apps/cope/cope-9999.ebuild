@@ -19,7 +19,7 @@ DEPEND="dev-perl/Class-Inspector
 dev-perl/File-ShareDir
 dev-perl/List-MoreUtils
 dev-perl/Params-Util
-dev-perl/regexp-common
+dev-perl/Regexp-Common
 dev-perl/Regexp-IPv6
 dev-perl/Env-Path
 dev-perl/IO-Stty
