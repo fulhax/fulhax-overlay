@@ -10,7 +10,7 @@ inherit python-single-r1 git-r3
 
 DESCRIPTION="Checker to make sure a C++ file follows Google's C++ style guide"
 HOMEPAGE="https://code.google.com/p/google-styleguide"
-EGIT_REPO_URI="https://github.com/tkruse/${PN}"
+EGIT_REPO_URI="https://github.com/google/styleguide"
 
 LICENSE="cpplint"
 SLOT="0"
@@ -19,12 +19,12 @@ IUSE="test"
 
 src_test() {
 	einfo "Running ${EPYTHON} cpplint_unittest.py"
-	${EPYTHON} cpplint_unittest.py --verbose \
+	${EPYTHON} ${PN}/cpplint_unittest.py --verbose \
 		|| die "cpplint_unittest.py failed"
 }
 
 src_install() {
-	python_doscript cpplint.py
+	python_doscript ${PN}/cpplint.py
 
-	dodoc README
+	dodoc ${PN}/README
 }
