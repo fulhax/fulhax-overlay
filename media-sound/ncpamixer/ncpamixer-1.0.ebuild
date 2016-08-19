@@ -1,10 +1,17 @@
-EAPI=6 
-inherit cmake-utils
+EAPI=5 
+
+[[ ${PV} == *9999 ]] && SCM="git-r3"
+inherit cmake-utils ${SCM}
 
 DESCRIPTION="An ncurses mixer for PulseAudio inspired by pavucontrol."
 HOMEPAGE="https://github.com/fulhax/ncpamixer" 
-SRC_URI="https://github.com/fulhax/ncpamixer/archive/${PV}.tar.gz \
-		 -> ${P}.tar.gz"
+
+if [[ ${PV} == *9999 ]]; then
+    EGIT_REPO_URI="https://github.com/fulhax/ncpamixer.git"
+else
+    SRC_URI="https://github.com/fulhax/ncpamixer/archive/${PV}.tar.gz \
+        -> ${P}.tar.gz"
+fi
 
 LICENSE="MIT" 
 SLOT="0" 
