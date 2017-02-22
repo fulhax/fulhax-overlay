@@ -17,6 +17,14 @@ SLOT="0"
 KEYWORDS=""
 IUSE="test"
 
+src_compile() {
+	true
+}
+
+src_prepare() {
+	true
+}
+
 src_install() {
-	python_doscript ${PN}/src/clint.py
+	python_doscript "${S}/src/clint.py"
 }
