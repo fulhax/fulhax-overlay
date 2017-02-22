@@ -15,5 +15,5 @@ IUSE="bash-completion zsh-completion"
 
 RDEPEND="
 	bash-completion? ( >=app-shells/bash-4 )
-	zsh-completion? ( app-shells/zsh app-shells/zsh-completion )
+	zsh-completion? ( app-shells/zsh )
 "
