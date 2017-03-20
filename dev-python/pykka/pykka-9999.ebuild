@@ -1,9 +1,8 @@
 EAPI=5
 
-PYTHON_COMPAT=( python{2_7,3_4} )
+PYTHON_COMPAT=( python2_7 )
 
 EGIT_REPO_URI="git://github.com/jodal/pykka.git"
-PYTHON_DEPEND="2"
 
 inherit eutils distutils-r1 git-2
 

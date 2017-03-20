@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-PYTHON_DEPEND="2"
+
 PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1 eutils git-2

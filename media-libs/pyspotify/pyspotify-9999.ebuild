@@ -1,9 +1,8 @@
 EAPI=5
 
-PYTHON_COMPAT=( python{2_7,3_4} )
+PYTHON_COMPAT=( python2_7 )
 
 EGIT_REPO_URI="git://github.com/mopidy/pyspotify.git"
-PYTHON_DEPEND="2"
 
 EGIT_MASTER="v2.x/master"
 EGIT_BRANCH="v2.x/master"

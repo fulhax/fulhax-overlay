@@ -4,13 +4,12 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_7,3_4} )
+PYTHON_COMPAT=( python2_7 )
 
 DESCRIPTION="Mopidy extension that plays sound from Youtube"
 HOMEPAGE="https://github.com/dz0ny/mopidy-youtube"
 
 EGIT_REPO_URI="git://github.com/dz0ny/mopidy-youtube.git"
-PYTHON_DEPEND="2"
 
 inherit eutils distutils-r1 git-2
 

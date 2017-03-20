@@ -4,13 +4,12 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_7,3_4} )
+PYTHON_COMPAT=( python2_7 )
 
 DESCRIPTION="Mopidy extension for playing music from Spotify"
 HOMEPAGE="https://github.com/mopidy/mopidy-spotify"
 
 EGIT_REPO_URI="git://github.com/mopidy/mopidy-spotify.git"
-PYTHON_DEPEND="2"
 
 inherit eutils distutils-r1 git-2
 

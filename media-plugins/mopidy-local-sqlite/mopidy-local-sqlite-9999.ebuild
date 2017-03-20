@@ -4,13 +4,12 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_7,3_4} )
+PYTHON_COMPAT=( python2_7 )
 
 DESCRIPTION="Mopidy-Local-SQLite is a Mopidy local library extension that uses an SQLite database for keeping track of your local media."
 HOMEPAGE="https://github.com/tkem/mopidy-local-sqlite"
 
 EGIT_REPO_URI="git://github.com/tkem/mopidy-local-sqlite.git"
-PYTHON_DEPEND="2"
 
 inherit eutils distutils-r1 git-2
 

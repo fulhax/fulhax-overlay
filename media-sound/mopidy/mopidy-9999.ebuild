@@ -1,12 +1,11 @@
 EAPI=5
 
-PYTHON_COMPAT=( python{2_7,3_4} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit eutils distutils-r1 git-2
 
 EGIT_REPO_URI="git://github.com/mopidy/mopidy.git"
 EGIT_PATCHES="${FILESDIR}/install.patch"
-PYTHON_DEPEND="2"
 
 # EGIT_MASTER="develop"
 # EGIT_BRANCH="develop"
