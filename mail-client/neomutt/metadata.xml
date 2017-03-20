@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>grobian@gentoo.org</email>
+  </maintainer>
+  <maintainer type="project">
+    <email>rich@neomutt.org</email>
+    <name>NeoMutt</name>
+  </maintainer>
+  <use>
+    <flag name="gpg">Enable support for <pkg>app-crypt/gpgme</pkg></flag>
+    <flag name="pop">Enable support for POP3</flag>
+    <flag name="notmuch">Enable support for <pkg>net-mail/notmuch</pkg></flag>
+    <flag name="sidebar">Enable the sidebar feature</flag>
+    <flag name="smime">Enable support for smime</flag>
+    <flag name="smtp">Enable support for smtp</flag>
+    <flag name="tokyocabinet">Enable tokyocabinet database backend for header
+      caching</flag>
+  </use>
+</pkgmetadata>
