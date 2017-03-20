@@ -6,7 +6,7 @@ EAPI=5
 PYTHON_DEPEND="2"
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils eutils git-2
+inherit distutils-r1 eutils git-2
 
 DESCRIPTION="PRAW, an acronym for \"Python Reddit API Wrapper\",\
 	is a python package that allows for simple access to reddit's API."

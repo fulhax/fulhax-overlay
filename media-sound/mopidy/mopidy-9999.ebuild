@@ -1,6 +1,8 @@
 EAPI=5
 
-inherit eutils distutils git-2
+PYTHON_COMPAT=( python{2_7,3_4} )
+
+inherit eutils distutils-r1 git-2
 
 EGIT_REPO_URI="git://github.com/mopidy/mopidy.git"
 EGIT_PATCHES="${FILESDIR}/install.patch"
@@ -33,7 +35,7 @@ RDEPEND="=media-libs/pyspotify-9999
 DEPEND="${RDEPEND}"
 
 src_install() {
-  distutils_src_install
+  distutils-r1_src_install
   make_desktop_entry "${PN}" "Mopidy Music Server" "audio-x-generic" \
     "AudioVideo;Audio;Player;ConsoleOnly;" "Terminal=true"
 }
