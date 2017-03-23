@@ -3,10 +3,10 @@
 # $Id$
 
 EAPI=5
-PYTHON_DEPEND="2"
+
 PYTHON_COMPAT=( python2_7 )
 
-inherit eutils distutils git-2
+inherit eutils distutils-r1 git-2
 
 DESCRIPTION="Browse Reddit from your terminal"
 HOMEPAGE="https://github.com/michael-lazar/rtv"

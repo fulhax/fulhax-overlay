@@ -3,10 +3,10 @@
 # $Id$
 
 EAPI=5
-PYTHON_DEPEND="2"
+
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils eutils git-2
+inherit distutils-r1 eutils git-2
 
 DESCRIPTION="A python module that will check for package updates."
 HOMEPAGE="https://github.com/bboe/update_checker"
