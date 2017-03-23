@@ -1,0 +1,39 @@
+diff --git a/src/option_parser.c b/src/option_parser.c
+index 2e857f6..be0969f 100644
+--- a/src/option_parser.c
++++ b/src/option_parser.c
+@@ -8,6 +8,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <wordexp.h>
+ 
+ #include "utils.h"
+ 
+@@ -112,8 +113,9 @@ char *get_value(char *section, char *key)
+ char *ini_get_string(char *section, char *key, const char *def)
+ {
+         char *value = get_value(section, key);
+-        if (value)
++        if (value) {
+                 return g_strdup(value);
++        }
+ 
+         return def ? g_strdup(def) : NULL;
+ }
+@@ -277,6 +279,15 @@ int load_ini_file(FILE * fp)
+                         continue;
+                 }
+ 
++                wordexp_t res;
++                if (wordexp(value, &res, 0) != 0) {
++                        fprintf(stderr, "Unable to expand string.\n");
++                        continue;
++                }
++
++                value = g_strdup(res.we_wordv[0]);
++                wordfree(&res);
++
+                 add_entry(current_section, key, value);
+         }
+         free(line);

@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://github.com/knopwob/dunst.git"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="**"
-IUSE="dunstify"
+IUSE="dunstify wordexp"
 
 CDEPEND="
 	dev-libs/glib:2
@@ -43,6 +43,10 @@ src_prepare() {
 	if ! use dunstify; then
 		# don't build dunstify: it pulls in deps but is not being installed
 		sed -ie "/^all:/ s:dunstify::" Makefile || die "sed failed"
+	fi
+
+	if use wordexp; then
+		epatch "${FILESDIR}"/dunst_wordexp.patch
 	fi
 
 	epatch_user
