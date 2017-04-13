@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://github.com/knopwob/dunst.git"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="**"
-IUSE="dunstify"
+IUSE="dunstify wordexp"
 
 CDEPEND="
 	dev-libs/glib:2
@@ -45,10 +45,13 @@ src_prepare() {
 		sed -ie "/^all:/ s:dunstify::" Makefile || die "sed failed"
 	fi
 
+	if use wordexp; then
+		epatch "${FILESDIR}"/dunst_wordexp.patch
+	fi
+
 	epatch_user
 }
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="/usr" install
-	dodoc CHANGELOG
 }
