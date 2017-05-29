@@ -15,7 +15,7 @@ EGIT_REPO_URI="git://github.com/michael-lazar/rtv.git"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="reddit"
-IUSE=""
+IUSE="+urxvt-fix"
 
 DEPEND="
 	www-servers/tornado
@@ -26,3 +26,9 @@ DEPEND="
 	dev-python/kitchen
 "
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	if use urxvt-fix; then
+		epatch "$FILEDIR/urxvt-fix.patch"
+	fi
+}
