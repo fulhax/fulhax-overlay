@@ -17,5 +17,12 @@ SLOT="0"
 KEYWORDS="reddit"
 IUSE=""
 
-DEPEND="www-servers/tornado dev-python/six dev-python/requests dev-python/praw dev-python/kitchen"
+DEPEND="
+	www-servers/tornado
+	dev-python/mailcap_fix
+	dev-python/six
+	dev-python/requests
+	dev-python/praw
+	dev-python/kitchen
+"
 RDEPEND="${DEPEND}"

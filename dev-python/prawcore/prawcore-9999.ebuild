@@ -8,10 +8,9 @@ PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1 eutils git-2
 
-DESCRIPTION="PRAW, an acronym for \"Python Reddit API Wrapper\",\
-	is a python package that allows for simple access to reddit's API."
-HOMEPAGE="https://github.com/praw-dev/praw"
-EGIT_REPO_URI="git://github.com/praw-dev/praw.git"
+DESCRIPTION="Low-level communication layer for PRAW 4+."
+HOMEPAGE="https://github.com/praw-dev/prawcore"
+EGIT_REPO_URI="git://github.com/praw-dev/prawcore.git"
 
 LICENSE="BSD"
 SLOT="0"
@@ -19,17 +18,13 @@ KEYWORDS=""
 IUSE=""
 
 DEPEND="
-	dev-python/prawcore
 	dev-python/decorator
 	dev-python/six
 	dev-python/requests
+	dev-python/update_checker
 "
 
 RDEPEND="${DEPEND}"
-
-src_prepare() {
-	sed -i -e 's/update_checker == 0.11/update_checker/' setup.py
-}
 
 src_compile() {
 	python setup.py --prefix=/usr --root="${D}" --optimize=1
