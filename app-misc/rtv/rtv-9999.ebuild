@@ -29,6 +29,6 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	if use urxvt-fix; then
-		epatch "$FILEDIR/urxvt-fix.patch"
+		epatch "$FILESDIR/urxvt-fix.patch"
 	fi
 }
