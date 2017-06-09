@@ -20,7 +20,7 @@ IUSE="debug"
 
 DEPEND="
 	=media-sound/mopidy-9999
-	>=uritools-1.0
+	>=dev-python/uritools-1.0
 "
 RDEPEND="${DEPEND}"
 
