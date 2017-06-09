@@ -18,7 +18,10 @@ SLOT="0"
 KEYWORDS=""
 IUSE="debug"
 
-DEPEND="=media-sound/mopidy-9999"
+DEPEND="
+	=media-sound/mopidy-9999
+	>=uritools-1.0
+"
 RDEPEND="${DEPEND}"
 
 src_install() {
