@@ -18,6 +18,11 @@ IUSE=""
 DEPEND="app-arch/unzip"
 RDEPEND="${DEPEND}"
 
-S=${WORKDIR}
+S="${WORKDIR}/Envy-Code-R-PR7"
 FONT_S="${S}"
 FONT_SUFFIX="ttf"
+
+src_unpack() {
+	unpack "${A}"
+	mv "${WORKDIR}/Envy Code R PR7" "${S}"
+}
