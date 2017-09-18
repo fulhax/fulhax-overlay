@@ -1,0 +1,17 @@
+drwxr-xr-x	fu:fu	3  day 	   4K	locales/
+ drwxr-xr-x	fu:fu	3  day 	   4K	resources/
+ -rwxr-xr-x	fu:fu	3  day 	  77M	Discord*
+ -rw-r--r--	fu:fu	3  day 	 335K	natives_blob.bin
+ -rw-r--r--	fu:fu	3  day 	 971K	snapshot_blob.bin
+ -rw-r--r--	fu:fu	3  day 	 9.7M	icudtl.dat
+ -rw-r--r--	fu:fu	3  day 	 314B	discord.desktop
+ -rw-r--r--	fu:fu	3  day 	  25K	blink_image_resources_200_percent.pak
+ -rw-r--r--	fu:fu	3  day 	  15B	content_resources_200_percent.pak
+ -rw-r--r--	fu:fu	3  day 	 9.7M	content_shell.pak
+ -rw-r--r--	fu:fu	3  day 	 137K	pdf_viewer_resources.pak
+ -rw-r--r--	fu:fu	3  day 	 160K	ui_resources_200_percent.pak
+ -rw-r--r--	fu:fu	3  day 	  59K	views_resources_200_percent.pak
+ -rw-r--r--	fu:fu	3  day 	  29K	discord.png
+ -rwxr-xr-x	fu:fu	3  day 	 530B	postinst.sh*
+ -rw-r--r--	fu:fu	3  day 	 2.9M	libffmpeg.so
+ -rwxr-xr-x	fu:fu	3  day 	  20M	libnode.so*

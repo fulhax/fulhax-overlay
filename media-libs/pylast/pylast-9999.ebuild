@@ -2,12 +2,12 @@ EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
 
-ESVN_REPO_URI="http://pylast.googlecode.com/svn/trunk/"
+EGIT_REPO_URI="git://github.com/pylast/pylast.git"
 
-inherit eutils distutils-r1 subversion
+inherit eutils distutils-r1 git-2
 
-DESCRIPTION="a python interface to last.fm"
-HOMEPAGE="http://code.google.com/p/pylast/"
+DESCRIPTION="A Python interface to Last.fm and Libre.fm"
+HOMEPAGE="https://github.com/pylast/pylast"
 
 LICENSE="Apache-2.0"
 SLOT="0"

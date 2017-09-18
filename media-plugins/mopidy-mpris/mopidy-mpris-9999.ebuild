@@ -6,10 +6,10 @@ EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
 
-DESCRIPTION="Mopidy-Local-SQLite is a Mopidy local library extension that uses an SQLite database for keeping track of your local media."
-HOMEPAGE="https://github.com/tkem/mopidy-local-sqlite"
+DESCRIPTION="Mopidy extension for controlling Mopidy through the MPRIS D-Bus interface"
+HOMEPAGE="https://www.mopidy.com/"
 
-EGIT_REPO_URI="git://github.com/tkem/mopidy-local-sqlite.git"
+EGIT_REPO_URI="git://github.com/mopidy/mopidy-mpris.git"
 
 inherit eutils distutils-r1 git-2
 
@@ -20,7 +20,8 @@ IUSE="debug"
 
 DEPEND="
 	=media-sound/mopidy-9999
-	>=dev-python/uritools-1.0
+	>=dev-python/pykka-1.1
+	>=dev-python/dbus-python-1.2
 "
 RDEPEND="${DEPEND}"
 

@@ -1,0 +1,41 @@
+diff --git a/rtv/page.py b/rtv/page.py
+index d71e597..f07d69e 100644
+--- a/rtv/page.py
++++ b/rtv/page.py
+@@ -6,15 +6,17 @@ import sys
+ import time
+ import curses
+ import logging
++
++from . import docs
+ from functools import wraps
+ 
+ import six
++
+ from kitchen.text.display import textual_width
+ 
+-from . import docs
+-from .objects import Controller, Color, Command
++from .objects import Color, Command, Controller
+ from .clipboard import copy
+-from .exceptions import TemporaryFileError, ProgramError
++from .exceptions import ProgramError, TemporaryFileError
+ from .__version__ import __version__
+ 
+ _logger = logging.getLogger(__name__)
+@@ -390,14 +392,7 @@ class Page(object):
+         self._draw_content()
+         self._draw_footer()
+         self._add_cursor()
+-        # Note: There used to be a call to stdscr.touchwin() here. However, a
+-        # bug was discovered in tmux when $TERM was set to `xterm-256color`,
+-        # where only part of the screen got redrawn when scrolling. The correct
+-        # solution is to use `screen-256color` (which gets set automatically by
+-        # tmux) but many people override ther $TERM in their tmux.conf or
+-        # .bashrc file. Using clearok() instead seems to fix the problem, at
+-        # the expense of slightly more expensive screen refreshes.
+-        self.term.stdscr.clearok(True)
++        self.term.stdscr.touchwin()
+         self.term.stdscr.refresh()
+ 
+     def _draw_header(self):
