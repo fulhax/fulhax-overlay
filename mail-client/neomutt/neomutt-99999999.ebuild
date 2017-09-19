@@ -10,7 +10,7 @@ if [[ ${PV} == 99999999 ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/neomutt/neomutt.git"
 	EGIT_CHECKOUT_DIR="${WORKDIR}/neomutt-${P}"
-	KEYWORDS=""
+	KEYWORDS="**"
 else
 	SRC_URI="https://github.com/${PN}/${PN}/archive/${P}.tar.gz"
 	KEYWORDS="~amd64"
