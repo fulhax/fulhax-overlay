@@ -58,7 +58,6 @@ python_test() {
 python_install_all() {
 	doman doc/${PN}.1
 	dodoc doc/{changelog,contributing,faq}.asciidoc
-	dodoc {README}.asciidoc
 
 	domenu misc/${PN}.desktop
 	doicon -s scalable icons/${PN}.svg
