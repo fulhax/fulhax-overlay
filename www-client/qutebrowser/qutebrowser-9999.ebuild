@@ -57,9 +57,10 @@ python_test() {
 
 python_install_all() {
 	doman doc/${PN}.1
-	dodoc {changelog,contributing,faq,readme}.asciidoc
+	dodoc doc/{changelog,contributing,faq}.asciidoc
+	dodoc {README}.asciidoc
 
-	domenu ${PN}.desktop
+	domenu misc/${PN}.desktop
 	doicon -s scalable icons/${PN}.svg
 
 	distutils-r1_python_install_all
