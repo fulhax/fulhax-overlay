@@ -15,6 +15,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=""
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	dev-perl/Params-Validate
+	dev-perl/Module-Build
+"
 
 SRC_TEST="do"
