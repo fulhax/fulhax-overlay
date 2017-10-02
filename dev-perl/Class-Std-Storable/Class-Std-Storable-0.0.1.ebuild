@@ -17,6 +17,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 	dev-perl/Class-Std
+	dev-perl/Module-Build
 "
 
 SRC_TEST="do"
