@@ -1,0 +1,13 @@
+diff --git a/src/screen.C b/src/screen.C
+index 9eb375a..21cd4b8 100644
+--- a/src/screen.C
++++ b/src/screen.C
+@@ -2125,7 +2125,7 @@ rxvt_term::scr_refresh () NOTHROW
+           {
+             rend_t rend = cur_rend;
+ 
+-            rend ^= RS_RVid;
++            rend |= RS_RVid;
+             rend = SET_FGCOLOR (rend, ccol1);
+             rend = SET_BGCOLOR (rend, ccol2);
+ 
