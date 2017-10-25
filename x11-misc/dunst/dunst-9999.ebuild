@@ -45,10 +45,6 @@ src_prepare() {
 		sed -ie "/^all:/ s:dunstify::" Makefile || die "sed failed"
 	fi
 
-	if use wordexp; then
-		epatch "${FILESDIR}"/dunst_wordexp.patch
-	fi
-
 	epatch_user
 }
 
