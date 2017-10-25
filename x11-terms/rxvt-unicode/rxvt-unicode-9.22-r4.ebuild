@@ -46,6 +46,10 @@ src_prepare() {
 	# kill the rxvt-unicode terminfo file - #192083
 	sed -i -e "/rxvt-unicode.terminfo/d" doc/Makefile.in || die "sed failed"
 
+	if use force-cursor; then
+		epatch "${FILESDIR}"/force-cursor.patch
+	fi
+
 	eautoreconf
 }
 
