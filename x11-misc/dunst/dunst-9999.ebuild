@@ -6,14 +6,14 @@ EAPI=5
 
 inherit eutils git-2
 
-DESCRIPTION="customizable and lightweight notification-daemon"
-HOMEPAGE="http://www.knopwob.org/dunst/"
-EGIT_REPO_URI="git://github.com/knopwob/dunst.git"
+DESCRIPTION="lightweight and customizable notification daemon"
+HOMEPAGE="http://dunst-project.org"
+EGIT_REPO_URI="git://github.com/dunst-project/dunst.git"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="**"
-IUSE="dunstify wordexp"
+IUSE="dunstify"
 
 CDEPEND="
 	dev-libs/glib:2
