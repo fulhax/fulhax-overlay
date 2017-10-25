@@ -1,0 +1,58 @@
+diff --git a/src/option_parser.c b/src/option_parser.c
+index a8d522f..c40993e 100644
+--- a/src/option_parser.c
++++ b/src/option_parser.c
+@@ -7,6 +7,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <wordexp.h>
+ 
+ #include "utils.h"
+ 
+@@ -292,6 +293,15 @@ int load_ini_file(FILE *fp)
+                         continue;
+                 }
+ 
++                wordexp_t res;
++                if (wordexp(value, &res, 0) != 0) {
++                        fprintf(stderr, "Unable to expand string.\n");
++                        continue;
++                }
++
++                value = g_strdup(res.we_wordv[0]);
++                wordfree(&res);
++
+                 add_entry(current_section, key, value);
+         }
+         free(line);
+diff --git a/src/settings.c b/src/settings.c
+index d9566ad..76fcced 100644
+--- a/src/settings.c
++++ b/src/settings.c
+@@ -422,7 +422,7 @@ void load_settings(char *cmdline_config_path)
+         // If the deprecated icon_folders option is used,
+         // read it and generate its usage string.
+         if (ini_is_set("global", "icon_folders") || cmdline_is_set("-icon_folders")) {
+-                settings.icon_path = option_get_string(
++                settings.icon_path = option_get_path(
+                         "global",
+                         "icon_folders", "-icon_folders", defaults.icon_path,
+                         "folders to default icons (deprecated, please use 'icon_path' instead)"
+@@ -432,13 +432,15 @@ void load_settings(char *cmdline_config_path)
+         // Read value and generate usage string for icon_path.
+         // If icon_path is set, override icon_folder.
+         // if not, but icon_folder is set, use that instead of the compile time default.
+-        settings.icon_path = option_get_string(
++        settings.icon_path = option_get_path(
+                 "global",
+                 "icon_path", "-icon_path",
+                 settings.icon_path ? settings.icon_path : defaults.icon_path,
+                 "paths to default icons"
+         );
+ 
++        printf("%s\n", settings.icon_path);
++
+         {
+                 // Backwards compatibility with the legacy 'frame' section.
+                 if (ini_is_set("frame", "width")) {
