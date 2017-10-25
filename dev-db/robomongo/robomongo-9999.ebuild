@@ -28,7 +28,7 @@ S=${WORKDIR}/${P}
 roboshell="${S}/src/third-party/robomongo-shell"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-9999-fix-qurl.patch"
+	# epatch "${FILESDIR}/${PN}-9999-fix-qurl.patch"
 
 	find "${S}" -type f -iname '*.cmake' -exec \
 		sed -e "s/\/lib/\/lib\/lib/" -i  {} \;
