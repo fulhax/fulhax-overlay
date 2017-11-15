@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris"
 IUSE="
 	256-color blink fading-colors +font-styles iso14755 +mousewheel +perl
-	pixbuf startup-notification unicode3 xft
+	pixbuf startup-notification unicode3 xft +force-cursor
 "
 RESTRICT="test"
 
@@ -37,7 +37,6 @@ PATCHES=(
 	"${FILESDIR}"/line-spacing-fix.patch
 	"${FILESDIR}"/sgr-mouse-mode.patch
 	"${FILESDIR}"/fix-smart-resize-with-x11-frame-borders.patch
-	"${FILESDIR}"/wcwidthcallback.patch
 )
 
 
@@ -46,6 +45,10 @@ src_prepare() {
 
 	# kill the rxvt-unicode terminfo file - #192083
 	sed -i -e "/rxvt-unicode.terminfo/d" doc/Makefile.in || die "sed failed"
+
+	if use force-cursor; then
+		epatch "${FILESDIR}"/force-cursor.patch
+	fi
 
 	eautoreconf
 }
@@ -77,9 +80,8 @@ src_configure() {
     --enable-wtmp \
     $(use_enable xft) \
     --enable-xim \
-    --enable-xterm-scroll \
-    --enable-wcwidthpreload
-	
+    --enable-xterm-scroll
+
 }
 
 src_compile() {

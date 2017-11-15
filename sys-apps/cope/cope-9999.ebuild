@@ -15,15 +15,18 @@ LICENSE="GPL-2 Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="dev-perl/Class-Inspector
-dev-perl/File-ShareDir
-dev-perl/List-MoreUtils
-dev-perl/Params-Util
-dev-perl/Regexp-Common
-dev-perl/Regexp-IPv6
-dev-perl/Env-Path
-dev-perl/IO-Stty
-dev-perl/IO-Tty"
+DEPEND="
+	dev-perl/Class-Inspector
+	dev-perl/Module-Install
+	dev-perl/File-ShareDir
+	dev-perl/List-MoreUtils
+	dev-perl/Params-Util
+	dev-perl/Regexp-Common
+	dev-perl/Regexp-IPv6
+	dev-perl/Env-Path
+	dev-perl/IO-Stty
+	dev-perl/IO-Tty
+"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
