@@ -19,7 +19,7 @@ RDEPEND="app-eselect/eselect-ctags"
 DEPEND="!dev-util/ctags"
 
 src_prepare() {
-	[[ ${PV} == "9999" ]] && ./autogen.sh
+	[[ ${PV} == "99999999" ]] && ./autogen.sh
 	eautoreconf
 }
 
