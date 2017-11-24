@@ -5,9 +5,9 @@
 EAPI=5
 
 DESCRIPTION="Facebook protocol plugin for BitlBee"
-HOMEPAGE="https://github.com/jgeboski/bitlbee-facebook"
+HOMEPAGE="https://github.com/bitlbee/bitlbee-facebook"
 
-EGIT_REPO_URI="git://github.com/jgeboski/bitlbee-facebook.git"
+EGIT_REPO_URI="git://github.com/bitlbee/bitlbee-facebook.git"
 
 inherit eutils git-2
 
