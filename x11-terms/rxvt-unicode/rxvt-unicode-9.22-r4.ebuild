@@ -12,8 +12,8 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris"
 IUSE="
-	256-color blink fading-colors +font-styles iso14755 +mousewheel +perl
-	pixbuf startup-notification unicode3 xft +force-cursor
+	+256-color blink fading-colors +font-styles iso14755 +mousewheel +perl
+	pixbuf startup-notification +unicode3 +xft +force-cursor +unicode9
 "
 RESTRICT="test"
 
@@ -80,7 +80,9 @@ src_configure() {
     --enable-wtmp \
     $(use_enable xft) \
     --enable-xim \
-    --enable-xterm-scroll
+    --enable-xterm-scroll \
+    $(use_enable unicode9) \
+	--enable-wide-glyphs
 
 }
 
