@@ -1,0 +1,25 @@
+diff -Naur dmenu-4.7/dmenu.c dmenu-classname-4.7/dmenu.c
+--- dmenu-4.7/dmenu.c	2017-05-02 18:36:47.000000000 +0200
++++ dmenu-classname-4.7/dmenu.c	2018-01-10 15:52:32.896887718 +0100
+@@ -614,6 +614,21 @@
+ 	                    CopyFromParent, CopyFromParent, CopyFromParent,
+ 	                    CWOverrideRedirect | CWBackPixel | CWEventMask, &swa);
+ 
++    /* Set window properties */
++    if (win) {
++       {
++           char *NAME = "dmenu";
++           XTextProperty tprop_name;
++           if (Success == Xutf8TextListToTextProperty(dc->dpy, &NAME, 1,
++                       XStringStyle, &tprop_name))
++               XSetWMName(dc->dpy, win, &tprop_name);
++       }
++       {
++           XClassHint HINT = { "dmenu", "Dmenu" };
++           XSetClassHint(dc->dpy, win, &HINT);
++       }
++    }
++
+ 	/* open input methods */
+ 	xim = XOpenIM(dpy, NULL, NULL, NULL);
+ 	xic = XCreateIC(xim, XNInputStyle, XIMPreeditNothing | XIMStatusNothing,

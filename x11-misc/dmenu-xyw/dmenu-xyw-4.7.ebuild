@@ -27,6 +27,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-gentoo.patch
 	"${FILESDIR}"/${P}-xyw.patch
+	"${FILESDIR}"/${P}-classname.patch
 )
 
 S="${WORKDIR}/dmenu-${PV}"
