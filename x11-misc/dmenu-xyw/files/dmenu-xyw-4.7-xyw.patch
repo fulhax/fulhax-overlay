@@ -71,7 +71,6 @@ index a07f8e3..9e0c51c 100644
  usage(void)
  {
  	fputs("usage: dmenu [-bfiv] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
--	      "             [-h height]\n"
 +	      "             [-h height] [-x xoffset] [-y yoffset] [-w width]\n"
  	      "             [-nb color] [-nf color] [-sb color] [-sf color] [-w windowid]\n", stderr);
  	exit(1);
