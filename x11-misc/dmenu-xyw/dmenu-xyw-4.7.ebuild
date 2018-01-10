@@ -6,7 +6,7 @@ inherit savedconfig toolchain-funcs
 
 DESCRIPTION="a generic, highly customizable, and efficient menu for the X Window System"
 HOMEPAGE="https://tools.suckless.org/dmenu/"
-SRC_URI="https://dl.suckless.org/tools/dmenu-4.7.tar.gz"
+SRC_URI="https://dl.suckless.org/tools/dmenu-${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -25,9 +25,11 @@ DEPEND="${RDEPEND}
 	x11-proto/xproto
 "
 PATCHES=(
-	"${FILESDIR}"/${PN}-4.7-gentoo.patch
-	"${FILESDIR}"/${PN}-4.7-xyw.patch
+	"${FILESDIR}"/${P}-gentoo.patch
+	"${FILESDIR}"/${P}-xyw.patch
 )
+
+S="${WORKDIR}/dmenu-${PV}"
 
 src_prepare() {
 	default
