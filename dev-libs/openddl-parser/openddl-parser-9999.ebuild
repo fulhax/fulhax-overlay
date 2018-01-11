@@ -8,7 +8,7 @@ inherit git-r3 cmake-utils
 
 DESCRIPTION="A simple and fast OpenDDL Parser"
 HOMEPAGE="http://github.com/kimkulling/openddl-parser"
-EGIT_REPO_URI="git://github.com/kimkulling/openddl-parser.git"
+EGIT_REPO_URI="https://github.com/kimkulling/openddl-parser"
 
 LICENSE="MIT"
 SLOT="0"

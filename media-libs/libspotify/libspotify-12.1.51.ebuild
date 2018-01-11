@@ -1,51 +1,65 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
-DESCRIPTION="The libspotify C API package allows third-party developers to write applications that utilize the Spotify music streaming service."
+inherit multilib-minimal
+
+DESCRIPTION="SDK/C language API for Spotify"
 HOMEPAGE="https://developer.spotify.com/technologies/libspotify/"
-SRC_URI="
-	x86? (
-		https://developer.spotify.com/download/libspotify/${P}-Linux-i686-release.tar.gz
-	)
-	amd64? (
-		https://developer.spotify.com/download/libspotify/${P}-Linux-x86_64-release.tar.gz
-	)
-"
+SRC_URI="abi_x86_64? ( https://developer.spotify.com/download/${PN}/${P}-Linux-x86_64-release.tar.gz )
+	abi_x86_32? ( https://developer.spotify.com/download/${PN}/${P}-Linux-i686-release.tar.gz )"
 
-LICENSE="LibSpotify"
+LICENSE="libspotify Boost-1.0 MIT BSD ZLIB CPOL"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="doc"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}"
 
-src_compile() {
-	# nothing to compile
-	return
+src_unpack() {
+	declare -A abi_map
+	abi_map["amd64"]="x86_64"
+	abi_map["x86"]="i686"
+
+	multilib_src_unpack() {
+		# manually unpack and strip first dir
+		mkdir -p "${BUILD_DIR}" || die
+		tar -C "${BUILD_DIR}" \
+			-x --strip-components 1 \
+			-f "${DISTDIR}/${P}-Linux-${abi_map[${ABI}]}-release.tar.gz" || die
+	}
+
+	multilib_parallel_foreach_abi multilib_src_unpack
 }
 
-src_install() {
-	if use x86; then
-		cd "${P}-Linux-x86-release"
-	elif use amd64; then
-		cd "${P}-Linux-x86_64-release"
-	else
-		ewarn "Arch not supported, something went wrong"
-		die 1
+multilib_src_configure() {
+	sed -i \
+		-e "s|PKG_PREFIX|${EROOT}/usr|" \
+		-e "s|/lib|/$(get_libdir)|" \
+		lib/pkgconfig/libspotify.pc || die
+}
+
+src_compile() { :; }
+
+multilib_src_install() {
+	insinto /usr/$(get_libdir)
+	doins lib/libspotify.so*
+
+	insinto /usr/$(get_libdir)/pkgconfig
+	doins lib/pkgconfig/libspotify.pc
+
+	insinto /usr/include
+	doins -r include/libspotify
+
+	doman share/man*/*
+
+	if use doc ; then
+		dodoc -r share/doc/libspotify/examples/
+		dohtml -r share/doc/libspotify/html/*
 	fi
-
-	sed -i 's#PKG_PREFIX:$(prefix)#PKG_PREFIX:$(real_prefix)#;s/ldconfig.*//' Makefile
-	emake prefix="${D}/${DESTTREE}" real_prefix="${DESTTREE}" install
-
-	dodoc ChangeLog LICENSE licenses.xhtml README
-
-	# install man
-	doman share/man3/*
 }
-
