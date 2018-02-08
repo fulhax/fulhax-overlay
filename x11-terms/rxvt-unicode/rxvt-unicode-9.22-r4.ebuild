@@ -34,7 +34,6 @@ DEPEND="
 	x11-proto/xproto
 "
 PATCHES=(
-	"${FILESDIR}"/force-cursor.patch
 	"${FILESDIR}"/enable-wide-glyphs.patch
 	"${FILESDIR}"/line-spacing-fix.patch
 	"${FILESDIR}"/sgr-mouse-mode.patch
