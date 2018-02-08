@@ -34,12 +34,12 @@ DEPEND="
 	x11-proto/xproto
 "
 PATCHES=(
-	"${FILESDIR}"/enable-wide-glyphs.patch
-	"${FILESDIR}"/fix-smart-resize-with-x11-frame-borders.patch
 	"${FILESDIR}"/force-cursor.patch
+	"${FILESDIR}"/enable-wide-glyphs.patch
 	"${FILESDIR}"/line-spacing-fix.patch
 	"${FILESDIR}"/sgr-mouse-mode.patch
-	"${FILESDIR}"/wcwidthcallback.patch
+	"${FILESDIR}"/font-width-fix.patch
+	"${FILESDIR}"/fix-smart-resize-with-x11-frame-borders.patch
 )
 
 
