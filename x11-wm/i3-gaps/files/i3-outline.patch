@@ -1,0 +1,135 @@
+From 6b059431ac77716d704004ebd4fbadb095587d1c Mon Sep 17 00:00:00 2001
+From: c0r73x <c0r73x@fulhax.nu>
+Date: Thu, 16 Aug 2018 13:22:37 +0200
+Subject: [PATCH] Added outline
+
+---
+ include/configuration.h  |  4 ++++
+ parser-specs/config.spec |  7 +++++++
+ src/config.c             |  2 ++
+ src/config_directives.c  | 10 ++++++++--
+ src/x.c                  | 17 +++++++++++++++++
+ 5 files changed, 38 insertions(+), 2 deletions(-)
+
+diff --git a/include/configuration.h b/include/configuration.h
+index 3582dff5..606c86b0 100644
+--- a/include/configuration.h
++++ b/include/configuration.h
+@@ -217,9 +217,13 @@ struct Config {
+     int32_t floating_minimum_width;
+     int32_t floating_minimum_height;
+ 
++    /** Outline size **/
++    int32_t outline_size;
++
+     /* Color codes are stored here */
+     struct config_client {
+         color_t background;
++        color_t outline;
+         struct Colortriple focused;
+         struct Colortriple focused_inactive;
+         struct Colortriple unfocused;
+diff --git a/parser-specs/config.spec b/parser-specs/config.spec
+index 118c36af..be5505da 100644
+--- a/parser-specs/config.spec
++++ b/parser-specs/config.spec
+@@ -27,6 +27,7 @@ state INITIAL:
+   'gaps'                                   -> GAPS
+   'smart_borders'                          -> SMART_BORDERS
+   'smart_gaps'                             -> SMART_GAPS
++  'outline'                                -> OUTLINE
+   'floating_minimum_size'                  -> FLOATING_MINIMUM_SIZE_WIDTH
+   'floating_maximum_size'                  -> FLOATING_MAXIMUM_SIZE_WIDTH
+   'floating_modifier'                      -> FLOATING_MODIFIER
+@@ -57,6 +58,8 @@ state INITIAL:
+   exectype = 'exec_always', 'exec'         -> EXEC
+   colorclass = 'client.background'
+       -> COLOR_SINGLE
++  colorclass = 'client.outline'
++      -> COLOR_SINGLE
+   colorclass = 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+       -> COLOR_BORDER
+ 
+@@ -87,6 +90,10 @@ state SMART_GAPS:
+   enabled = '1', 'yes', 'true', 'on', 'enable', 'active'
+       -> call cfg_smart_gaps($enabled)
+ 
++state OUTLINE:
++  size = number
++    -> call cfg_outline(&size)
++
+ # floating_minimum_size <width> x <height>
+ state FLOATING_MINIMUM_SIZE_WIDTH:
+   width = number
+diff --git a/src/config.c b/src/config.c
+index 85f647e4..3b0d06bd 100644
+--- a/src/config.c
++++ b/src/config.c
+@@ -213,6 +213,8 @@ void load_configuration(xcb_connection_t *conn, const char *override_configpath,
+     } while (0)
+ 
+     config.client.background = draw_util_hex_to_color("#000000");
++    config.client.outline = draw_util_hex_to_color("#000000");
++
+     INIT_COLOR(config.client.focused, "#4c7899", "#285577", "#ffffff", "#2e9ef4");
+     INIT_COLOR(config.client.focused_inactive, "#333333", "#5f676a", "#ffffff", "#484e50");
+     INIT_COLOR(config.client.unfocused, "#333333", "#222222", "#888888", "#292d2e");
+diff --git a/src/config_directives.c b/src/config_directives.c
+index 34291afe..b4b393ab 100644
+--- a/src/config_directives.c
++++ b/src/config_directives.c
+@@ -218,6 +218,10 @@ CFGFUN(smart_gaps, const char *enable) {
+     config.smart_gaps = eval_boolstr(enable);
+ }
+ 
++CFGFUN(outline, const long size) {
++    config.outline_size = size;
++}
++
+ CFGFUN(floating_minimum_size, const long width, const long height) {
+     config.floating_minimum_width = width;
+     config.floating_minimum_height = height;
+@@ -428,8 +432,10 @@ CFGFUN(popup_during_fullscreen, const char *value) {
+ }
+ 
+ CFGFUN(color_single, const char *colorclass, const char *color) {
+-    /* used for client.background only currently */
+-    config.client.background = draw_util_hex_to_color(color);
++    if (strcmp(colorclass, "client.background") == 0)
++        config.client.background = draw_util_hex_to_color(color);
++    else if (strcmp(colorclass, "client.outline") == 0)
++        config.client.outline = draw_util_hex_to_color(color);
+ }
+ 
+ CFGFUN(color, const char *colorclass, const char *border, const char *background, const char *text, const char *indicator, const char *child_border) {
+diff --git a/src/x.c b/src/x.c
+index 1f54db83..0a78eac7 100644
+--- a/src/x.c
++++ b/src/x.c
+@@ -549,6 +549,23 @@ void x_draw_decoration(Con *con) {
+         }
+     }
+ 
++    int32_t os = config.outline_size;
++    if (con->window != NULL) {
++        /* top area */
++        draw_util_rectangle(&(con->frame_buffer), config.client.outline,
++                            0, 0, r->width, os);
++        /* bottom area */
++        draw_util_rectangle(&(con->frame_buffer), config.client.outline,
++                            0, r->height - os, r->width, os);
++        /* left area */
++        draw_util_rectangle(&(con->frame_buffer), config.client.outline,
++                            0, 0, os, r->height);
++        /* right area */
++        draw_util_rectangle(&(con->frame_buffer), config.client.outline,
++                            r->width - os, 0, os, r->height);
++    }
++
++
+     /* if this is a borderless/1pixel window, we don’t need to render the
+      * decoration. */
+     if (p->border_style != BS_NORMAL)
+-- 
+2.18.0
+
