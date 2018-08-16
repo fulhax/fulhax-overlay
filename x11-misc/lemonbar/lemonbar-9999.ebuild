@@ -22,7 +22,7 @@ RDEPEND="x11-libs/libxcb"
 
 src_unpack() {
 	if use xft; then
-		EGIT_REPO_URI="git://github.com/krypt-n/bar.git"
+		EGIT_REPO_URI="git://github.com/c0r73x/bar.git"
 	fi
 
 	git-r3_src_unpack
