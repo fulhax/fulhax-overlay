@@ -39,18 +39,7 @@ RDEPEND="
 DOCS=( README.md build/megacmd/megacmd.changes )
 
 src_prepare() {
-	sed \
-		-e '/SUBDIRS.*sdk/d' \
-		-e '/sdk\/m4/d' \
-		-e 's:LMEGAINC=.*:PKG_CHECK_MODULES([MEGA],[libmega])\nLMEGAINC=${MEGA_CFLAGS}:' \
-		-i Makefile.am configure.ac
-	sed \
-		-e 's:\$(top_builddir)/sdk/src/libmega\.la:$(MEGA_LIBS):' \
-		-e 's:mega_cmd_LDADD = .*:&$(MEGA_LIBS):' \
-		-e 's:^mega_exec_CXXFLAGS.*:&\nmega_exec_LDADD=$(MEGA_LIBS):' \
-		-e 's:sdk/include/mega/[^ ]\+\.h::g' \
-		-e '/sdk\/src\/[^ ]\+\.cpp/d' \
-		-i src/include.am
+	autoreconf -fiv
 	default
 	eautoreconf
 }
