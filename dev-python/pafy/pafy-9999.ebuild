@@ -7,9 +7,9 @@ EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
 DESCRIPTION="Python library to download YouTube content and retrieve metadata "
-HOMEPAGE="https://github.com/np1/pafy/"
+HOMEPAGE="https://github.com/mps-youtube/pafy/"
 
-EGIT_REPO_URI="git://github.com/np1/pafy.git"
+EGIT_REPO_URI="git://github.com/mps-youtube/pafy.git"
 
 inherit eutils distutils-r1 git-2
 
