@@ -507,7 +507,7 @@ src_install-libs() {
 		if use kernel_linux; then
 			NV_GLX_LIBRARIES+=(
 				"libnvidia-ml.so.${NV_SOVER}"
-				"tls/libnvidia-tls.so.${NV_SOVER}"
+				"libnvidia-tls.so.${NV_SOVER}"
 			)
 		fi
 
