@@ -1,0 +1,168 @@
+diff --git a/src/lib/linux/TogglDesktopLibrary/TogglDesktopLibrary.pro b/src/lib/linux/TogglDesktopLibrary/TogglDesktopLibrary.pro
+index 7951b6e..13bf349 100644
+--- a/src/lib/linux/TogglDesktopLibrary/TogglDesktopLibrary.pro
++++ b/src/lib/linux/TogglDesktopLibrary/TogglDesktopLibrary.pro
+@@ -35,7 +35,6 @@ SOURCES += \
+     ../../../gui.cc \
+     ../../../netconf.cc \
+     ../../../https_client.cc \
+-    $$PWD/../../../../third_party/jsoncpp/dist/jsoncpp.cpp \
+     ../../../toggl_api.cc \
+     ../../../toggl_api_private.cc \
+     ../../../model_change.cc \
+@@ -52,41 +51,7 @@ SOURCES += \
+     ../../../user.cc \
+     ../../../websocket_client.cc \
+     ../../../window_change_recorder.cc \
+-    ../../../workspace.cc \
+-    ../../../../third_party/lua/src/lapi.c \
+-    ../../../../third_party/lua/src/lauxlib.c \
+-    ../../../../third_party/lua/src/lbaselib.c \
+-    ../../../../third_party/lua/src/lbitlib.c \
+-    ../../../../third_party/lua/src/lcode.c \
+-    ../../../../third_party/lua/src/lcorolib.c \
+-    ../../../../third_party/lua/src/lctype.c \
+-    ../../../../third_party/lua/src/ldblib.c \
+-    ../../../../third_party/lua/src/ldebug.c \
+-    ../../../../third_party/lua/src/ldo.c \
+-    ../../../../third_party/lua/src/ldump.c \
+-    ../../../../third_party/lua/src/lfunc.c \
+-    ../../../../third_party/lua/src/lgc.c \
+-    ../../../../third_party/lua/src/linit.c \
+-    ../../../../third_party/lua/src/liolib.c \
+-    ../../../../third_party/lua/src/llex.c \
+-    ../../../../third_party/lua/src/lmathlib.c \
+-    ../../../../third_party/lua/src/lmem.c \
+-    ../../../../third_party/lua/src/loadlib.c \
+-    ../../../../third_party/lua/src/lobject.c \
+-    ../../../../third_party/lua/src/lopcodes.c \
+-    ../../../../third_party/lua/src/loslib.c \
+-    ../../../../third_party/lua/src/lparser.c \
+-    ../../../../third_party/lua/src/lstate.c \
+-    ../../../../third_party/lua/src/lstring.c \
+-    ../../../../third_party/lua/src/lstrlib.c \
+-    ../../../../third_party/lua/src/ltable.c \
+-    ../../../../third_party/lua/src/ltablib.c \
+-    ../../../../third_party/lua/src/ltm.c \
+-    ../../../../third_party/lua/src/luac.c \
+-    ../../../../third_party/lua/src/lundump.c \
+-    ../../../../third_party/lua/src/lutf8lib.c \
+-    ../../../../third_party/lua/src/lvm.c \
+-    ../../../../third_party/lua/src/lzio.c
++    ../../../workspace.cc
+ 
+ HEADERS += \
+     ../../../base_model.h \
+@@ -125,84 +90,18 @@ HEADERS += \
+     ../../../user.h \
+     ../../../websocket_client.h \
+     ../../../window_change_recorder.h \
+-    ../../../workspace.h \
+-    ../../../../third_party/lua/src/lapi.h \
+-    ../../../../third_party/lua/src/lauxlib.h \
+-    ../../../../third_party/lua/src/lcode.h \
+-    ../../../../third_party/lua/src/lctype.h \
+-    ../../../../third_party/lua/src/ldebug.h \
+-    ../../../../third_party/lua/src/ldo.h \
+-    ../../../../third_party/lua/src/lfunc.h \
+-    ../../../../third_party/lua/src/lgc.h \
+-    ../../../../third_party/lua/src/llex.h \
+-    ../../../../third_party/lua/src/llimits.h \
+-    ../../../../third_party/lua/src/lmem.h \
+-    ../../../../third_party/lua/src/lobject.h \
+-    ../../../../third_party/lua/src/lopcodes.h \
+-    ../../../../third_party/lua/src/lparser.h \
+-    ../../../../third_party/lua/src/lprefix.h \
+-    ../../../../third_party/lua/src/lstate.h \
+-    ../../../../third_party/lua/src/lstring.h \
+-    ../../../../third_party/lua/src/ltable.h \
+-    ../../../../third_party/lua/src/ltm.h \
+-    ../../../../third_party/lua/src/lua.hpp \
+-    ../../../../third_party/lua/src/luaconf.h \
+-    ../../../../third_party/lua/src/lualib.h \
+-    ../../../../third_party/lua/src/lundump.h \
+-    ../../../../third_party/lua/src/lvm.h \
+-    ../../../../third_party/lua/src/lzio.h \
+-    ../../../../third_party/lua/src/lua.h
++    ../../../workspace.h
+ 
+-pocolib = $$PWD/../../../../third_party/poco/lib/Linux/$$system(uname -m)
+-openssldir = $$PWD/../../../../third_party/openssl
+-
+-LIBS += -L$$OUT_PWD/
+-LIBS += -L$$pocolib -lPocoDataSQLite -lPocoData -lPocoNet -lPocoNetSSL -lPocoCrypto -lPocoUtil -lPocoXML -lPocoFoundation
+-LIBS += -L$$openssldir -lssl -lcrypto
++LIBS += -lPocoDataSQLite -lPocoData -lPocoNet -lPocoNetSSL -lPocoCrypto -lPocoUtil -lPocoXML -lPocoFoundation
++LIBS += -lssl -lcrypto
+ LIBS += -lX11
++LIBS += -ljsoncpp
++LIBS += -llua5.2
+ 
+-INCLUDEPATH += $$PWD/../../../../third_party/jsoncpp/dist
+-DEPENDPATH += $$PWD/../../../../third_party/jsoncpp/dist
+-
+-INCLUDEPATH += $$PWD/../../../../third_party/lua/src
+-DEPENDPATH += $$PWD/../../../../third_party/lua/src
+-
+-INCLUDEPATH += $$PWD/../../../../third_party/poco/Foundation/include
+-DEPENDPATH += $$PWD/../../../../third_party/poco/Foundation/include
+-
+-INCLUDEPATH += $$PWD/../../../../third_party/poco/Util/include
+-DEPENDPATH += $$PWD/../../../../third_party/poco/Util/include
+-
+-INCLUDEPATH += $$PWD/../../../../third_party/poco/Data/include
+-DEPENDPATH += $$PWD/../../../../third_party/poco/Data/include
+-
+-INCLUDEPATH += $$PWD/../../../../third_party/poco/Data/SQLite/include
+-DEPENDPATH += $$PWD/../../../../third_party/poco/Data/SQLite/include
+-
+-INCLUDEPATH += $$PWD/../../../../third_party/openssl/include
+-DEPENDPATH += $$PWD/../../../../third_party/openssl/include
+-
+-INCLUDEPATH += $$PWD/../../../../third_party/poco/Crypto/include
+-DEPENDPATH += $$PWD/../../../../third_party/poco/Crypto/include
+-
+-INCLUDEPATH += $$PWD/../../../../third_party/poco/Net/include
+-DEPENDPATH += $$PWD/../../../../third_party/poco/Net/include
+-
+-INCLUDEPATH += $$PWD/../../../../third_party/poco/NetSSL_OpenSSL/include
+-DEPENDPATH += $$PWD/../../../../third_party/poco/NetSSL_OpenSSL/include
+-
+-INCLUDEPATH += $$PWD/../../../../third_party/poco/Data/SQLite/src
+-DEPENDPATH += $$PWD/../../../../third_party/poco/Data/SQLite/src
++INCLUDEPATH += /usr/include/jsoncpp
++INCLUDEPATH += /usr/include/lua5.2
+ 
+ #QMAKE_CXXFLAGS += -fsanitize=thread -fPIE
+ #QMAKE_LFLAGS += -pie -fsanitize=thread
+ 
+ QMAKE_CXXFLAGS += -std=c++11
+-
+-unix:!mac{
+-	QMAKE_LFLAGS += -Wl,--rpath=\\\$\$\ORIGIN
+-	QMAKE_LFLAGS += -Wl,--rpath=\\\$\$\ORIGIN/lib
+-	QMAKE_LFLAGS += -Wl,--rpath=\\\$\$\ORIGIN/lib
+-	QMAKE_RPATH=
+-}
+-
+diff --git a/src/ui/linux/TogglDesktop/TogglDesktop.pro b/src/ui/linux/TogglDesktop/TogglDesktop.pro
+index f86de87..0c69c44 100644
+--- a/src/ui/linux/TogglDesktop/TogglDesktop.pro
++++ b/src/ui/linux/TogglDesktop/TogglDesktop.pro
+@@ -81,15 +81,11 @@ FORMS    += \
+     feedbackdialog.ui \
+     idlenotificationdialog.ui
+ 
+-QMAKE_RPATHDIR += $$PWD/../../../lib/linux/TogglDesktopLibrary/build/release
+-QMAKE_RPATHDIR += $$PWD/../../../../third_party/bugsnag-qt/build/release
+-
+ LIBS += -L$$PWD/../../../lib/linux/TogglDesktopLibrary/build/release -lTogglDesktopLibrary
+-LIBS += -L$$PWD/../../../../third_party/bugsnag-qt/build/release -lbugsnag-qt
++LIBS += -lbugsnag-qt
+ LIBS += -lX11 -lXss
+ 
+ INCLUDEPATH += $$PWD/../../../
+-INCLUDEPATH += $$PWD/../../../../third_party/bugsnag-qt
+ INCLUDEPATH += $$PWD/../../../../third_party/qt-oauth-lib
+ 
+ QMAKE_RPATHDIR += .
