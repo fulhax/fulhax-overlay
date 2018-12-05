@@ -21,6 +21,8 @@ DEPEND="dev-qt/qtcore:5=
 RDEPEND="${DEPEND}"
 
 src_prepare() {
+	eapply_user
+
 	sed -i \
 		-e "s|/usr/lib|/\$(DESTDIR)/usr/$(get_libdir)|" \
 		bugsnag-qt.pro || die
