@@ -9,16 +9,23 @@ HOMEPAGE="https://github.com/fulhax/ncpamixer"
 if [[ ${PV} == *9999 ]]; then
     EGIT_REPO_URI="https://github.com/fulhax/ncpamixer.git"
 else
-    SRC_URI="https://github.com/fulhax/ncpamixer/archive/${PV}.tar.gz \
-        -> ${P}.tar.gz"
+    SRC_URI="https://github.com/fulhax/ncpamixer/archive/${PV}.tar.gz -> ${P}.tar.gz"
 fi
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="amd64 x86"
 
 RDEPEND="media-sound/pulseaudio sys-libs/ncurses[unicode]"
 DEPEND="dev-util/cmake ${RDEPEND}"
+IUSE="+wide"
 
 CMAKE_USE_DIR="${S}/src/"
-USE_WIDE=1
+
+src_configure() {
+	local mycmakeargs=(
+		$(cmake-utils_use_use wide)
+	)
+
+	cmake-utils_src_configure
+}
