@@ -15,7 +15,7 @@ fi
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="amd64 x86"
 
 RDEPEND="media-sound/pulseaudio sys-libs/ncurses[unicode]"
 DEPEND="dev-util/cmake ${RDEPEND}"
