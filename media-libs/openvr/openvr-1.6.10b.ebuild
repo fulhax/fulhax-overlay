@@ -23,7 +23,7 @@ RDEPEND=""
 src_prepare() {
 	sed -i -e "s/ DESTINATION lib)/ DESTINATION $(get_libdir))/" src/CMakeLists.txt || die
 
-	default
+	cmake-utils_src_prepare
 }
 
 src_configure() {
