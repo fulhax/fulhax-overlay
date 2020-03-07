@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="A colorful wrapper for terminal programs"
 HOMEPAGE="https://github.com/jeekl/cope"

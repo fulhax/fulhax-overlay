@@ -8,7 +8,7 @@ EGIT_REPO_URI="git://github.com/jedbrown/git-fat.git"
 
 PYTHON_COMPAT=( python3_{4,5} )
 
-inherit python-r1 git-2
+inherit python-r1 git-r3
 
 DESCRIPTION="Simple way to handle fat files without committing them to git"
 HOMEPAGE="https://github.com/jedbrown/git-fat"

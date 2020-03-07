@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/mps-youtube/pafy/"
 
 EGIT_REPO_URI="git://github.com/mps-youtube/pafy.git"
 
-inherit eutils distutils-r1 git-2
+inherit eutils distutils-r1 git-r3
 
 LICENSE="Apache-2.0"
 SLOT="0"

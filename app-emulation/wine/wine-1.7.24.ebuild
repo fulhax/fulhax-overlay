@@ -13,7 +13,7 @@ inherit autotools-utils eutils fdo-mime flag-o-matic gnome2-utils l10n multilib 
 #if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="https://github.com/stefand/wine.git"
 	EGIT_COMMIT="cee55f84d5f77cd99d9f5de6fd2e892ccb9c82aa"
-	inherit git-2
+	inherit git-r3
 	SRC_URI=""
 	#KEYWORDS=""
 #else
@@ -292,7 +292,7 @@ pkg_setup() {
 
 src_unpack() {
 	#if [[ ${PV} == "9999" ]] ; then
-		git-2_src_unpack
+		git-r3_src_unpack
 	#else
 	#	unpack ${MY_P}.tar.bz2
 	#fi

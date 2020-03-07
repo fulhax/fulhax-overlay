@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="an alsamixer alike for PulseAudio."
 HOMEPAGE="https://github.com/KenjiTakahashi/pacmixer"

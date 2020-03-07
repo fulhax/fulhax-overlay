@@ -6,7 +6,7 @@ EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1 eutils git-2
+inherit distutils-r1 eutils git-r3
 
 DESCRIPTION="Low-level communication layer for PRAW 4+."
 HOMEPAGE="https://github.com/praw-dev/prawcore"

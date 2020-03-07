@@ -8,7 +8,7 @@ EGIT_MASTER="v2.x/master"
 EGIT_BRANCH="v2.x/master"
 # EGIT_HAS_SUBMODULES="of course!"
 
-inherit eutils flag-o-matic distutils-r1 git-2
+inherit eutils flag-o-matic distutils-r1 git-r3
 
 DESCRIPTION="libspotify for Python"
 HOMEPAGE="http://www.mopidy.com/"

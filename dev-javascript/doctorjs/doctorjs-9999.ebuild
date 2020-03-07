@@ -10,7 +10,7 @@ HOMEPAGE="http://drjs.org"
 EGIT_REPO_URI="https://github.com/mozilla/doctorjs"
 EGIT_HAS_SUBMODULES="1"
 
-inherit git-2 eutils
+inherit git-r3 eutils
 
 LICENSE="MPL-1.1"
 SLOT="0"

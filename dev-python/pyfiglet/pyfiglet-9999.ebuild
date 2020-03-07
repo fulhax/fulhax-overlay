@@ -4,7 +4,7 @@ PYTHON_COMPAT=( python2_7 )
 
 EGIT_REPO_URI="git://github.com/pwaller/pyfiglet.git"
 
-inherit eutils distutils-r1 git-2
+inherit eutils distutils-r1 git-r3
 
 DESCRIPTION="An implementation of figlet written in python "
 HOMEPAGE="https://github.com/pwaller/pyfiglet"

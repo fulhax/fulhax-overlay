@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 eutils libtool toolchain-funcs autotools flag-o-matic
+inherit git-r3 eutils libtool toolchain-funcs autotools flag-o-matic
 
 DESCRIPTION="BitTorrent library written in C++ for *nix"
 HOMEPAGE="http://libtorrent.rakshasa.no/"

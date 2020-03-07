@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/AnyChart/gjstags"
 EGIT_REPO_URI="https://github.com/AnyChart/gjstags"
 EGIT_HAS_SUBMODULES="1"
 
-inherit git-2
+inherit git-r3
 
 LICENSE="MPL-1.1"
 SLOT="0"

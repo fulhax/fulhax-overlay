@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="A small collection of perl extensions for the rxvt-unicode terminal emulator"
 HOMEPAGE="https://github.com/muennich/urxvt-perls"

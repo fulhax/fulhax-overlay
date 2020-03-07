@@ -3,7 +3,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="Pulseaudio command line mixer"
 HOMEPAGE="https://github.com/cdemoulins/pamixer"

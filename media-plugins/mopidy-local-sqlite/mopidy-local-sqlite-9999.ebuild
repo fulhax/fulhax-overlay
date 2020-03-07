@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/tkem/mopidy-local-sqlite"
 
 EGIT_REPO_URI="git://github.com/tkem/mopidy-local-sqlite.git"
 
-inherit eutils distutils-r1 git-2
+inherit eutils distutils-r1 git-r3
 
 LICENSE="Apache-2.0"
 SLOT="0"

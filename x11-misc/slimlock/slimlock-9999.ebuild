@@ -3,7 +3,7 @@
 
 EAPI=5
 
-inherit eutils git-2
+inherit eutils git-r3
 
 DESCRIPTION="SLiM + slock = slimlock"
 HOMEPAGE="https://github.com/joelburget/slimlock"

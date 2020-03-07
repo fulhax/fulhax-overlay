@@ -6,7 +6,7 @@ EAPI=5
 
 PYTHON_COMPAT=( python{2_7,3_4} )
 
-inherit eutils distutils-r1 git-2
+inherit eutils distutils-r1 git-r3
 
 DESCRIPTION=" A command-line tool that helps you clean up Git branches that have been merged into master."
 HOMEPAGE="https://github.com/arc90/git-sweep"

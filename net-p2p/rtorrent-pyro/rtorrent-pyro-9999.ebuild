@@ -3,7 +3,7 @@
 
 EAPI=5
 
-inherit eutils git-2 autotools flag-o-matic
+inherit eutils git-r3 autotools flag-o-matic
 
 DESCRIPTION="BitTorrent Client using libtorrent - with Pyroscope patches"
 HOMEPAGE="http://libtorrent.rakshasa.no/"

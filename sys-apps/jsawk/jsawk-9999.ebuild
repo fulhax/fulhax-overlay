@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit eutils git-2
+inherit eutils git-r3
 
 DESCRIPTION="Like awk, buf for JSON"
 HOMEPAGE="https://github.com/micha/jsawk"

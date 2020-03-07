@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit eutils git-2
+inherit eutils git-r3
 
 EGIT_REPO_URI="git://github.com/qw3rtman/gg.git"
 

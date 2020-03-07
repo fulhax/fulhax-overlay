@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="Stag generates a streaming bar graph inside the terminal from the data passed through stdin."
 HOMEPAGE="https://github.com/seenaburns/stag"

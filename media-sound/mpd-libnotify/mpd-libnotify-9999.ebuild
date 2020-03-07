@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="libnotify daemon for MPD"
 HOMEPAGE="http://git.silverirc.com/cgit.cgi/mpd-libnotify.git/"

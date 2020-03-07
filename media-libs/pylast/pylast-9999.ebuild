@@ -4,7 +4,7 @@ PYTHON_COMPAT=( python2_7 )
 
 EGIT_REPO_URI="git://github.com/pylast/pylast.git"
 
-inherit eutils distutils-r1 git-2
+inherit eutils distutils-r1 git-r3
 
 DESCRIPTION="A Python interface to Last.fm and Libre.fm"
 HOMEPAGE="https://github.com/pylast/pylast"

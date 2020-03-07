@@ -2,7 +2,7 @@ EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
 
-inherit eutils distutils-r1 git-2
+inherit eutils distutils-r1 git-r3
 
 EGIT_REPO_URI="git://github.com/mopidy/mopidy.git"
 EGIT_PATCHES="${FILESDIR}/install.patch"
