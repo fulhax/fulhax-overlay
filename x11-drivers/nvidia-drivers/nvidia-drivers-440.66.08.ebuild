@@ -19,7 +19,7 @@ SRC_URI="
 "
 
 LICENSE="GPL-2 NVIDIA-r2"
-SLOT="0/${PV%.*}"
+SLOT="0/440"
 KEYWORDS="-* ~amd64"
 RESTRICT="bindist mirror"
 EMULTILIB_PKG="true"
@@ -51,7 +51,7 @@ COMMON="
 		x11-libs/pango[X]
 	)
 	X? (
-		!libglvnd? ( >=app-eselect/eselect-opengl-1.3.3 )
+		!libglvnd? ( >=app-eselect/eselect-opengl-1.3.1 )
 		libglvnd? (
 			media-libs/libglvnd[${MULTILIB_USEDEP}]
 			!app-eselect/eselect-opengl
