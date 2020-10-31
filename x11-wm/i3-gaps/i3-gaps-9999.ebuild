@@ -20,26 +20,45 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
 
-CDEPEND="dev-libs/libev
+CDEPEND="dev-libs/glib:2
+	dev-libs/libev
 	dev-libs/libpcre
-	>=dev-libs/yajl-2.0.3
+	dev-libs/yajl
+	x11-libs/cairo[X,xcb(+)]
 	x11-libs/libxcb[xkb]
 	x11-libs/libxkbcommon[X]
+	x11-libs/pango[X]
 	x11-libs/startup-notification
 	x11-libs/xcb-util
 	x11-libs/xcb-util-cursor
 	x11-libs/xcb-util-keysyms
-	x11-libs/xcb-util-xrm
 	x11-libs/xcb-util-wm
-	>=x11-libs/cairo-1.14.4[X,xcb]
-	>=x11-libs/pango-1.30.0[X]"
+	x11-libs/xcb-util-xrm
+"
 DEPEND="${CDEPEND}
-	virtual/pkgconfig"
+	test? (
+		dev-perl/ExtUtils-PkgConfig
+		dev-perl/IPC-Run
+		dev-perl/Inline
+		dev-perl/Inline-C
+		dev-perl/X11-XCB
+		dev-perl/XS-Object-Magic
+		x11-base/xorg-server[xephyr,xvfb]
+		x11-misc/xvfb-run
+	)
+"
+BDEPEND="
+	app-text/asciidoc
+	app-text/xmlto
+	dev-lang/perl
+	virtual/pkgconfig
+"
 RDEPEND="${CDEPEND}
 	dev-lang/perl
 	dev-perl/AnyEvent-I3
 	dev-perl/JSON-XS
-	!x11-wm/i3"
+	!x11-wm/i3
+"
 
 DOCS=( RELEASE-NOTES-${PV} )
 BUILDDIR="${S}/build"
