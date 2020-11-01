@@ -19,6 +19,7 @@ fi
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
+RESTRICT="!test? ( test )"
 
 CDEPEND="dev-libs/glib:2
 	dev-libs/libev
