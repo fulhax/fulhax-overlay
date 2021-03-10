@@ -1,7 +1,7 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 inherit savedconfig toolchain-funcs
 
 DESCRIPTION="a generic, highly customizable, and efficient menu for the X Window System"
@@ -10,7 +10,7 @@ SRC_URI="https://dl.suckless.org/tools/dmenu-${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~ppc ~ppc64 ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~x86"
 IUSE="xinerama"
 
 RDEPEND="
@@ -21,7 +21,6 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
-	xinerama? ( x11-proto/xineramaproto )
 	x11-base/xorg-proto
 "
 PATCHES=(
@@ -36,7 +35,6 @@ src_prepare() {
 
 	sed -i \
 		-e 's|^	@|	|g' \
-		-e 's|${CC} -o|$(CC) $(CFLAGS) -o|g' \
 		-e '/^	echo/d' \
 		Makefile || die
 
@@ -47,6 +45,8 @@ src_compile() {
 	emake CC=$(tc-getCC) \
 		"FREETYPEINC=$( $(tc-getPKG_CONFIG) --cflags x11 fontconfig xft 2>/dev/null )" \
 		"FREETYPELIBS=$( $(tc-getPKG_CONFIG) --libs x11 fontconfig xft 2>/dev/null )" \
+		"X11INC=$( $(tc-getPKG_CONFIG) --cflags x11 2>/dev/null )" \
+		"X11LIB=$( $(tc-getPKG_CONFIG) --libs x11 2>/dev/null )" \
 		"XINERAMAFLAGS=$(
 			usex xinerama "-DXINERAMA $(
 				$(tc-getPKG_CONFIG) --cflags xinerama 2>/dev/null
@@ -58,7 +58,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" install
+	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
 
 	save_config config.h
 }
