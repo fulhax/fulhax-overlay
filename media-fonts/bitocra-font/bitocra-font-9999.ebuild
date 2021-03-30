@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 inherit font git-r3
 
 DESCRIPTION="a small , clear bitmap font with good support latin-script languages and Hebrew"
