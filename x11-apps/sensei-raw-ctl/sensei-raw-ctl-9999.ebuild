@@ -25,7 +25,7 @@ DEPEND="
 
 src_configure() {
     local mycmakeargs=(
-        $(cmake-utils_use_build gtk GUI)
+		-DGUI=$(usex gtk)
     )
 
     cmake-utils_src_configure
