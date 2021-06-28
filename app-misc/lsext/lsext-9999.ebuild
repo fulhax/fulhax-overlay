@@ -1,4 +1,4 @@
-EAPI=5
+EAPI=6
 
 [[ ${PV} == *9999 ]] && SCM="git-r3"
 inherit cmake-utils ${SCM}

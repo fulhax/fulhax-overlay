@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=6
 
 DESCRIPTION="A modern flat theme with a combination of light and dark elements."
 HOMEPAGE="https://numixproject.org"

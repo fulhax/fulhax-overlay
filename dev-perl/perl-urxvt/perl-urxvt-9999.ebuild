@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: dev-perl/perl-URxvt/perl-URxvt-9999.ebuild,v 1.1 2014/07/15 09:39:34 -tclover Exp $
 
-EAPI=5
+EAPI=6
 
 inherit git-r3
 

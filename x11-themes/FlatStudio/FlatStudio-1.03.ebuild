@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=6
 
 DESCRIPTION="Flat GTK 2/3 theme"
 HOMEPAGE="http://gnome-look.org/content/show.php/FlatStudio?content=154296"

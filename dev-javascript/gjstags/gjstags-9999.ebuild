@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=6
 
 DESCRIPTION="ctags for JavaScript based on Google Closure Compiler "
 HOMEPAGE="https://github.com/AnyChart/gjstags"

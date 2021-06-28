@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
-inherit readme.gentoo versionator
+EAPI=6
+inherit versionator
 
 MY_PV=$(replace_all_version_separators "-")
 DESCRIPTION="A set of font rendering and replacement rules for fontconfig-infinality"
@@ -107,5 +107,5 @@ src_install() {
 	insinto /usr/share/eselect-lcdfilter/env.d
 	doins "${T}"/ultimate
 
-	readme.gentoo_create_doc
+	# readme.gentoo_create_doc
 }

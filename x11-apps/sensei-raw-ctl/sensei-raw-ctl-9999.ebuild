@@ -2,13 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=6
 
 inherit git-r3 cmake-utils
 
 DESCRIPTION="SteelSeries Sensei Raw configuration tool"
 HOMEPAGE="https://github.com/pjanouch/sensei-raw-ctl/"
-EGIT_REPO_URI="https://github.com/pjanouch/sensei-raw-ctl"
+EGIT_REPO_URI="https://git.janouch.name/p/sensei-raw-ctl"
 
 LICENSE="ISC"
 SLOT="0"

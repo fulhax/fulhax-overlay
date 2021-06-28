@@ -6,7 +6,7 @@
 # Original ebuild by eroen <eroen-overlay@occam.eroen.eu>, 2013
 # Distributed under the terms of the ISC license
 
-EAPI=5
+EAPI=6
 inherit eutils toolchain-funcs versionator git-r3
 
 DESCRIPTION="A keyboard-centric VTE-based terminal"
