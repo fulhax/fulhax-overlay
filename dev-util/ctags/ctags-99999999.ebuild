@@ -21,6 +21,7 @@ DEPEND="!dev-util/ctags"
 src_prepare() {
 	[[ ${PV} == "99999999" ]] && ./autogen.sh
 	eautoreconf
+	eapply_user
 }
 
 src_configure() {
