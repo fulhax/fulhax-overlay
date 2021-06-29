@@ -24,7 +24,7 @@ CMAKE_USE_DIR="${S}/src/"
 
 src_configure() {
 	local mycmakeargs=(
-		$(cmake-utils_use_use wide)
+		-DWIDE=$(usex wide)
 	)
 
 	cmake-utils_src_configure

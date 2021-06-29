@@ -46,10 +46,10 @@ src_prepare() {
 	fi
 
 	if use wordexp; then
-		epatch "${FILESDIR}"/dunst_wordexp.patch
+		eapply "${FILESDIR}"/dunst_wordexp.patch
 	fi
 
-	epatch_user
+	eapply_user
 }
 
 src_install() {
