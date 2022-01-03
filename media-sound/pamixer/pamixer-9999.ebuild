@@ -21,7 +21,3 @@ RDEPEND="${DEPEND}"
 src_configure() {
 	meson_src_configure
 }
-
-src_install() {
-	dobin pamixer
-}
