@@ -8,7 +8,7 @@ inherit git-r3 cmake-utils
 
 DESCRIPTION="SteelSeries Sensei Raw configuration tool"
 HOMEPAGE="https://github.com/pjanouch/sensei-raw-ctl/"
-EGIT_REPO_URI="https://git.janouch.name/p/sensei-raw-ctl"
+EGIT_REPO_URI="https://github.com/pjanouch/sensei-raw-ctl"
 
 LICENSE="ISC"
 SLOT="0"

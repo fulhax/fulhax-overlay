@@ -8,7 +8,7 @@ inherit git-r3
 
 DESCRIPTION="A featherweight, lemon-scented, bar based on xcb"
 HOMEPAGE="https://github.com/LemonBoy/bar"
-EGIT_REPO_URI="git://github.com/LemonBoy/bar.git"
+EGIT_REPO_URI="https://github.com/LemonBoy/bar.git"
 
 LICENSE="MIT"
 SLOT="0"
@@ -22,7 +22,7 @@ RDEPEND="x11-libs/libxcb"
 
 src_unpack() {
 	if use xft; then
-		EGIT_REPO_URI="git://github.com/c0r73x/bar.git"
+		EGIT_REPO_URI="https://github.com/c0r73x/bar.git"
 	fi
 
 	git-r3_src_unpack
