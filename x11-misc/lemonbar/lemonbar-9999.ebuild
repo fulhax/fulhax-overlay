@@ -30,4 +30,6 @@ src_unpack() {
 
 src_prepare() {
 	sed -i -e 's/-Os//' Makefile || die "Sed failed"
+
+	eapply_user
 }
