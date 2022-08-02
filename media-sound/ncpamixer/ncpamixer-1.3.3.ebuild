@@ -1,7 +1,7 @@
-EAPI=6
+EAPI=8
 
 [[ ${PV} == *9999 ]] && SCM="git-r3"
-inherit cmake-utils ${SCM}
+inherit cmake-multilib ${SCM}
 
 DESCRIPTION="An ncurses mixer for PulseAudio inspired by pavucontrol."
 HOMEPAGE="https://github.com/fulhax/ncpamixer"
@@ -24,8 +24,8 @@ CMAKE_USE_DIR="${S}/src/"
 
 src_configure() {
 	local mycmakeargs=(
-		$(cmake-utils_use_use wide)
+		$(cmake-multilib_use_use wide)
 	)
 
-	cmake-utils_src_configure
+	cmake-multilib_src_configure
 }
