@@ -1,4 +1,4 @@
-EAPI=6
+EAPI=7
 
 [[ ${PV} == *9999 ]] && SCM="git-r3"
 inherit eutils ${SCM}

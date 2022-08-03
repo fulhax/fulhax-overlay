@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/net-misc/tigervnc/tigervnc-1.3.1-r2.ebuild,v 1.2 2014/09/20 11:15:54 armin76 Exp $
 
-EAPI=6
+EAPI=7
 
-inherit eutils cmake-utils autotools java-pkg-opt-2 flag-o-matic
+inherit eutils cmake autotools java-pkg-opt-2 flag-o-matic
 
 PATCHVER="0.1"
 XSERVER_VERSION="1.16.0"
@@ -121,12 +121,12 @@ src_configure() {
 
 	mycmakeargs=(
 		-G "Unix Makefiles"
-		$(cmake-utils_use_enable gnutls GNUTLS)
-		$(cmake-utils_use_enable pam PAM)
-		$(cmake-utils_use_build java JAVA)
+		$(cmake_use_enable gnutls GNUTLS)
+		$(cmake_use_enable pam PAM)
+		$(cmake_use_build java JAVA)
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 
 	if use server; then
 		cd unix/xserver
@@ -160,7 +160,7 @@ src_configure() {
 }
 
 src_compile() {
-	cmake-utils_src_compile
+	cmake_src_compile
 
 	if use server ; then
 		cd unix/xserver
@@ -169,7 +169,7 @@ src_compile() {
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 
 	newicon "${DISTDIR}"/tigervnc.png vncviewer.png
 	make_desktop_entry vncviewer vncviewer vncviewer Network

@@ -6,8 +6,8 @@
 # Original ebuild by eroen <eroen-overlay@occam.eroen.eu>, 2013
 # Distributed under the terms of the ISC license
 
-EAPI=6
-inherit eutils toolchain-funcs versionator git-r3
+EAPI=7
+inherit eutils toolchain-funcs git-r3
 
 DESCRIPTION="A keyboard-centric VTE-based terminal"
 HOMEPAGE="https://github.com/thestinger/termite"
@@ -41,7 +41,7 @@ RDEPEND="${LIBDEPEND}"
 [[ ${EAPI} == *-hdepend ]] || DEPEND+=" ${HDEPEND}"
 
 pkg_pretend() {
-	if ! version_is_at_least 4.7 $(gcc-version); then
+	if ! ver_test 4.7 -ge $(gcc-version); then
 		eerror "${PN} passes -std=c++11 to \${CXX} and requires a version"
 		eerror "of gcc newer than 4.7.0"
 	fi

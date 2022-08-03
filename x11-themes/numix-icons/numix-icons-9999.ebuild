@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=6
+EAPI=7
 inherit gnome2-utils git-r3
 
 DESCRIPTION="Numix is the official icon theme from the Numix project."

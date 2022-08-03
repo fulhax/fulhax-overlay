@@ -28,5 +28,5 @@ src_configure() {
 		-DGUI=$(usex gtk)
     )
 
-    cmake-utils_src_configure
+    cmake_src_configure
 }

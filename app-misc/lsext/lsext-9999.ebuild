@@ -1,7 +1,7 @@
-EAPI=6
+EAPI=7
 
 [[ ${PV} == *9999 ]] && SCM="git-r3"
-inherit cmake-utils ${SCM}
+inherit cmake ${SCM}
 
 DESCRIPTION="An ncurses mixer for PulseAudio inspired by pavucontrol."
 HOMEPAGE="https://github.com/c0r73x/lsext"
