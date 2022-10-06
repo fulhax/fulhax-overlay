@@ -39,14 +39,13 @@ DESCRIPTION="Linux kernel fork that includes the pf-kernel patchset and Gentoo's
 HOMEPAGE="https://codeberg.org/pf-kernel/linux/wiki/README
 	https://dev.gentoo.org/~mpagano/genpatches/"
 SRC_URI="https://codeberg.org/pf-kernel/linux/archive/v${PFPV}.tar.gz -> linux-${PFPV}.tar.gz
-	${GENPATCHES_URI}
-	https://gitlab.com/torvic9/linux60-vd/-/raw/master/prjc-6.0-r0-vd.patch"
+	${GENPATCHES_URI}"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 
 S="${WORKDIR}/linux-${PFPV}"
 
-PATCHES=( "${DISTDIR}/prjc-6.0-r0-vd.patch" )
+PATCHES=( "${FILESDIR}/prjc-6.0-r0-vd.patch" )
 
 K_EXTRAEINFO="For more info on pf-sources and details on how to report problems,
 	see: ${HOMEPAGE}."
