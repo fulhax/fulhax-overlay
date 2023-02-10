@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-EXTRAVERSION="-cachyos"
+EXTRAVERSION="-cachyos-hdr"
 K_SECURITY_UNSUPPORTED="1"
 ETYPE="sources"
 inherit kernel-2
@@ -10,7 +10,7 @@ detect_version
 
 DESCRIPTION="CachyOS are improved kernels that improve performance and other aspects."
 HOMEPAGE="https://github.com/CachyOS/linux-cachyos"
-SRC_URI="https://gitlab.freedesktop.org/JoshuaAshton/linux-hdr/-/archive/josh-hdr-colorimetry/linux-hdr-josh-hdr-colorimetry.tar.gz"
+SRC_URI="https://gitlab.freedesktop.org/JoshuaAshton/linux-hdr/-/archive/josh-hdr-colorimetry/linux-hdr-josh-hdr-colorimetry.tar.gz -> linux-${PV}.tar.gz"
 
 LICENSE="GPL"
 SLOT="stable"
