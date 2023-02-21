@@ -12,7 +12,7 @@ inherit eutils toolchain-funcs git-r3
 DESCRIPTION="A keyboard-centric VTE-based terminal"
 HOMEPAGE="https://github.com/thestinger/termite"
 
-EGIT_REPO_URI="git://github.com/thestinger/termite.git"
+EGIT_REPO_URI="https://github.com/thestinger/termite.git"
 if [[ ${PV} != 999? ]]; then
 	EGIT_COMMIT=v${PV}
 fi

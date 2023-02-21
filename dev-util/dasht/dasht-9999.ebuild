@@ -8,7 +8,7 @@ inherit git-r3
 
 DESCRIPTION="API documentation in your terminal"
 HOMEPAGE="http://github.com/sunaku/dasht"
-EGIT_REPO_URI="git://github.com/sunaku/dasht.git"
+EGIT_REPO_URI="https://github.com/sunaku/dasht.git"
 
 LICENSE="ISC"
 SLOT="0"

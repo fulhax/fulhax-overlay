@@ -8,7 +8,7 @@ inherit git-r3
 
 DESCRIPTION="A small collection of perl extensions for the rxvt-unicode terminal emulator"
 HOMEPAGE="https://github.com/muennich/urxvt-perls"
-EGIT_REPO_URI="git://github.com/muennich/urxvt-perls.git"
+EGIT_REPO_URI="https://github.com/muennich/urxvt-perls.git"
 EGIT_PROJECT=${PN}.git
 
 LICENSE="GPL-2"

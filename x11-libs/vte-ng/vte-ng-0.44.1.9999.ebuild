@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/thestinger/vte-ng"
 
 # SRC_URI="https://github.com/thestinger/${PN}/archive/${PV}-ng.zip"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/thestinger/vte-ng.git"
+EGIT_REPO_URI="https://github.com/thestinger/vte-ng.git"
 EGIT_BRANCH="${PV%%.9999}b-ng"
 
 LICENSE="LGPL-2+"

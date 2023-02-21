@@ -9,7 +9,7 @@ inherit git-r3
 DESCRIPTION="A colorful wrapper for terminal programs"
 HOMEPAGE="https://github.com/jeekl/cope"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/lotrfan/cope.git"
+EGIT_REPO_URI="https://github.com/lotrfan/cope.git"
 
 LICENSE="GPL-2 Artistic"
 SLOT="0"

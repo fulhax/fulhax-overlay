@@ -10,7 +10,7 @@ PYTHON_VERSION=3
 
 DESCRIPTION="cli and curses mixer for pulseaudio "
 HOMEPAGE="https://github.com/GeorgeFilipkin/pulsemixer"
-EGIT_REPO_URI="git://github.com/GeorgeFilipkin/pulsemixer.git"
+EGIT_REPO_URI="https://github.com/GeorgeFilipkin/pulsemixer.git"
 
 LICENSE="MIT"
 SLOT="0"

@@ -8,7 +8,7 @@ inherit eutils git-r3
 
 DESCRIPTION="Like awk, buf for JSON"
 HOMEPAGE="https://github.com/micha/jsawk"
-EGIT_REPO_URI="git://github.com/micha/jsawk.git"
+EGIT_REPO_URI="https://github.com/micha/jsawk.git"
 
 LICENSE=""
 SLOT="0"

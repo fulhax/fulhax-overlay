@@ -8,7 +8,7 @@ inherit git-r3
 
 DESCRIPTION="an alsamixer alike for PulseAudio."
 HOMEPAGE="https://github.com/KenjiTakahashi/pacmixer"
-EGIT_REPO_URI="git://github.com/KenjiTakahashi/pacmixer.git"
+EGIT_REPO_URI="https://github.com/KenjiTakahashi/pacmixer.git"
 
 LICENSE="GPL-3"
 SLOT="0"

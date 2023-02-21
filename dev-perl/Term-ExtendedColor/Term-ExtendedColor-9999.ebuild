@@ -6,7 +6,7 @@ EAPI=7
 
 inherit git-r3
 
-EGIT_REPO_URI="git://github.com/trapd00r/Term-ExtendedColor.git"
+EGIT_REPO_URI="https://github.com/trapd00r/Term-ExtendedColor.git"
 
 DESCRIPTION="perl module"
 HOMEPAGE="https://github.com/trapd00r/Term-ExtendedColor"

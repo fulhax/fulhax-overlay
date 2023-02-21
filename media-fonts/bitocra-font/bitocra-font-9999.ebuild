@@ -7,7 +7,7 @@ inherit font git-r3
 
 DESCRIPTION="a small , clear bitmap font with good support latin-script languages and Hebrew"
 HOMEPAGE="https://github.com/ninjaaron/bitocra"
-EGIT_REPO_URI="git://github.com/ninjaaron/bitocra.git"
+EGIT_REPO_URI="https://github.com/ninjaaron/bitocra.git"
 
 LICENSE="SIL Open Font License"
 SLOT="0"

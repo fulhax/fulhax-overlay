@@ -8,7 +8,7 @@ inherit git-r3
 
 DESCRIPTION="libnotify daemon for MPD"
 HOMEPAGE="http://git.silverirc.com/cgit.cgi/mpd-libnotify.git/"
-EGIT_REPO_URI="git://github.com/KittyKatt/mpd-libnotify"
+EGIT_REPO_URI="https://github.com/KittyKatt/mpd-libnotify"
 
 LICENSE=""
 SLOT="0"

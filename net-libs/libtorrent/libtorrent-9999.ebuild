@@ -8,7 +8,7 @@ inherit git-r3 eutils libtool toolchain-funcs autotools flag-o-matic
 
 DESCRIPTION="BitTorrent library written in C++ for *nix"
 HOMEPAGE="http://libtorrent.rakshasa.no/"
-EGIT_REPO_URI="git://github.com/rakshasa/libtorrent.git"
+EGIT_REPO_URI="https://github.com/rakshasa/libtorrent.git"
 
 LICENSE="GPL-2"
 SLOT="0"

@@ -7,7 +7,7 @@ inherit font git-r3
 
 DESCRIPTION="Systemd of iconic fonts"
 HOMEPAGE="https://github.com/gstk/siji"
-EGIT_REPO_URI="git://github.com/gstk/siji.git"
+EGIT_REPO_URI="https://github.com/gstk/siji.git"
 
 LICENSE="GPL2"
 SLOT="0"

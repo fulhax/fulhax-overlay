@@ -8,7 +8,7 @@ inherit eutils git-r3
 
 DESCRIPTION="lightweight and customizable notification daemon"
 HOMEPAGE="http://dunst-project.org"
-EGIT_REPO_URI="git://github.com/dunst-project/dunst.git"
+EGIT_REPO_URI="https://github.com/dunst-project/dunst.git"
 
 LICENSE="BSD"
 SLOT="0"

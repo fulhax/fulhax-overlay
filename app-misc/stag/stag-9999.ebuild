@@ -8,7 +8,7 @@ inherit git-r3
 
 DESCRIPTION="Stag generates a streaming bar graph inside the terminal from the data passed through stdin."
 HOMEPAGE="https://github.com/seenaburns/stag"
-EGIT_REPO_URI="git://github.com/seenaburns/stag.git"
+EGIT_REPO_URI="https://github.com/seenaburns/stag.git"
 
 LICENSE="BSD"
 SLOT="0"

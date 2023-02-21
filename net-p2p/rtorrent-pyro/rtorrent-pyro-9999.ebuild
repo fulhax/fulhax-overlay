@@ -8,7 +8,7 @@ inherit eutils git-r3 autotools flag-o-matic
 DESCRIPTION="BitTorrent Client using libtorrent - with Pyroscope patches"
 HOMEPAGE="http://libtorrent.rakshasa.no/"
 
-EGIT_REPO_URI="git://github.com/rakshasa/rtorrent.git"
+EGIT_REPO_URI="https://github.com/rakshasa/rtorrent.git"
 
 #EGIT_COMMIT="cd029a6" # 0.9.3
 #EGIT_COMMIT="6a3234e" # 0.9.4

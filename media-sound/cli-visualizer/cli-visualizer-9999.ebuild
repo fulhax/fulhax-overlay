@@ -2,7 +2,7 @@ EAPI=7
 
 inherit git-r3
 
-EGIT_REPO_URI="git://github.com/dpayne/cli-visualizer.git"
+EGIT_REPO_URI="https://github.com/dpayne/cli-visualizer.git"
 
 DESCRIPTION="CLI based audio visualizer"
 HOMEPAGE="https://github.com/dpayne/cli-visualizer"
