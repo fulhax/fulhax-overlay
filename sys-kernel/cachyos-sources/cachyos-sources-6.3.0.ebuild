@@ -15,8 +15,8 @@ SRC_URI="${KERNEL_URI}"
 LICENSE="GPL"
 SLOT="stable"
 KEYWORDS="amd64"
-IUSE="+bore +latency prjc tt"
-REQUIRED_USE="bore? ( latency !prjc !tt ) prjc? ( !bore !latency !tt ) tt? ( !bore !latency !prjc )"
+IUSE="bore +eevdf latency prjc tt"
+REQUIRED_USE="bore? ( !eevdf latency !prjc !tt ) eevdf? ( !bore !latency !prjc !tt )  prjc? ( !bore !eevdf !latency !tt ) tt? ( !bore !eevdf !latency !prjc )"
 
 DEPEND="virtual/linux-sources"
 RDEPEND="${DEPEND}"
@@ -40,6 +40,10 @@ src_prepare() {
 		eapply "${FILESDIR}/${KV_MAJOR}.${KV_MINOR}/${KV_MAJOR}.${KV_MINOR}-bore-tuning-sysctl.patch"
 	fi
 
+	if use eevdf; then
+		eapply "${FILESDIR}/${KV_MAJOR}.${KV_MINOR}/${KV_MAJOR}.${KV_MINOR}-eevdf.patch"
+	fi
+
 	if use tt; then
 		eapply "${FILESDIR}/${KV_MAJOR}.${KV_MINOR}/${KV_MAJOR}.${KV_MINOR}-tt-cachy.patch"
 	fi
@@ -58,6 +62,10 @@ src_prepare() {
 	#if use cacule; then
 	#	cp "${FILESDIR}/config-x86_64-cacule" .config && elog "CaCULE config applied" || die
 	#fi
+
+	if use eevdf; then
+		cp "${FILESDIR}/config-x86_64-eevdf" .config && elog "EEVDF config applied" || die
+	fi
 
 	if use prjc; then
 		cp "${FILESDIR}/config-x86_64-prjc" .config && elog "PRJC config applied" || die
