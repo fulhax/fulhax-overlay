@@ -1,5 +1,5 @@
---- /usr/src/linux-5.15.19/drivers/net/ethernet/atheros/alx/ethtool.c	2022-02-01 08:27:16.000000000 -0800
-+++ /usr/src/linux-6.1/drivers/net/ethernet/atheros/alx/ethtool.c	2023-02-19 11:47:21.278594075 -0800
+--- a/drivers/net/ethernet/atheros/alx/ethtool.c	2022-02-01 08:27:16.000000000 -0800
++++ b/drivers/net/ethernet/atheros/alx/ethtool.c	2023-02-19 11:47:21.278594075 -0800
 @@ -321,11 +321,47 @@
  	}
  }
@@ -48,8 +48,8 @@
  	.get_link	= ethtool_op_get_link,
  	.get_strings	= alx_get_strings,
  	.get_sset_count	= alx_get_sset_count,
---- /usr/src/linux-5.15.19/drivers/net/ethernet/atheros/alx/hw.c	2022-02-01 08:27:16.000000000 -0800
-+++ /usr/src/linux-6.1/drivers/net/ethernet/atheros/alx/hw.c	2023-02-19 11:47:21.279594055 -0800
+--- a/drivers/net/ethernet/atheros/alx/hw.c	2022-02-01 08:27:16.000000000 -0800
++++ b/drivers/net/ethernet/atheros/alx/hw.c	2023-02-19 11:47:21.279594055 -0800
 @@ -332,6 +332,16 @@
  	alx_write_mem32(hw, ALX_STAD1, val);
  }
@@ -233,8 +233,8 @@
  bool alx_get_phy_info(struct alx_hw *hw)
  {
  	u16  devs1, devs2;
---- /usr/src/linux-5.15.19/drivers/net/ethernet/atheros/alx/hw.h	2022-02-01 08:27:16.000000000 -0800
-+++ /usr/src/linux-6.1/drivers/net/ethernet/atheros/alx/hw.h	2023-02-19 11:47:21.280594035 -0800
+--- a/drivers/net/ethernet/atheros/alx/hw.h	2022-02-01 08:27:16.000000000 -0800
++++ b/drivers/net/ethernet/atheros/alx/hw.h	2023-02-19 11:47:21.280594035 -0800
 @@ -487,6 +487,8 @@
  	u8 flowctrl;
  	u32 adv_cfg;
@@ -267,8 +267,8 @@
  bool alx_get_phy_info(struct alx_hw *hw);
  void alx_update_hw_stats(struct alx_hw *hw);
  
---- /usr/src/linux-5.15.19/drivers/net/ethernet/atheros/alx/main.c	2022-02-01 08:27:16.000000000 -0800
-+++ /usr/src/linux-6.1/drivers/net/ethernet/atheros/alx/main.c	2023-04-06 12:18:37.116119118 -0700
+--- a/drivers/net/ethernet/atheros/alx/main.c	2022-02-01 08:27:16.000000000 -0800
++++ b/drivers/net/ethernet/atheros/alx/main.c	2023-04-06 12:18:37.116119118 -0700
 @@ -607,7 +607,7 @@
  	if (netdev->addr_assign_type & NET_ADDR_RANDOM)
  		netdev->addr_assign_type ^= NET_ADDR_RANDOM;
