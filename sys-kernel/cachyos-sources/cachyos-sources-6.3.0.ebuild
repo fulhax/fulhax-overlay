@@ -15,7 +15,7 @@ SRC_URI="${KERNEL_URI}"
 LICENSE="GPL"
 SLOT="stable"
 KEYWORDS="amd64"
-IUSE="bore +eevdf latency prjc tt"
+IUSE="bore +eevdf latency prjc tt +alxwol"
 REQUIRED_USE="bore? ( !eevdf latency !prjc !tt ) eevdf? ( !bore !latency !prjc !tt )  prjc? ( !bore !eevdf !latency !tt ) tt? ( !bore !eevdf !latency !prjc )"
 
 DEPEND="virtual/linux-sources"
@@ -30,6 +30,9 @@ src_prepare() {
 #	if use cacule; then
 #	    eapply "${FILESDIR}/${KV_MAJOR}.${KV_MINOR}/${KV_MAJOR}.${KV_MINOR}-cacULE-cachy.patch"
 #	fi
+	if use alxwol; then
+		eapply "${FILESDIR}/${KV_MAJOR}.${KV_MINOR}/${KV_MAJOR}.${KV_MINOR}-alx-wol.patch"
+	fi
 
 	if use latency; then
 		eapply "${FILESDIR}/${KV_MAJOR}.${KV_MINOR}/${KV_MAJOR}.${KV_MINOR}-latency-fix.patch"
