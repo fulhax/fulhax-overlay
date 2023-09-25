@@ -3,12 +3,13 @@
 
 EAPI=8
 
-inherit meson toolchain-funcs
+inherit meson toolchain-funcs git-r3
 
 DESCRIPTION="A dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 HOMEPAGE="https://github.com/hyprwm/Hyprland"
 
-SRC_URI="https://github.com/hyprwm/${PN^}/releases/download/v${PV}/source-v${PV}.tar.gz -> ${P}.gh.tar.gz"
+EGIT_REPO_URI="https://github.com/hyprwm/Hyprland.git"
+EGIT_SUBMODULES=('*')
 S="${WORKDIR}/${PN}-source"
 
 KEYWORDS="~amd64"
