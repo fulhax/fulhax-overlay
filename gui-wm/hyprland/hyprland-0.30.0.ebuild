@@ -99,8 +99,6 @@ src_prepare() {
 		cd "${S}" || die
 	fi
 
-	eapply "${FILESDIR}/hyprland-0.28.0-no-wlroots-automagic-r1.patch"
-
 	default
 }
 
