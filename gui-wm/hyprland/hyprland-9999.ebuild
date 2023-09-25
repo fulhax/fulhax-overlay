@@ -10,7 +10,6 @@ HOMEPAGE="https://github.com/hyprwm/Hyprland"
 
 EGIT_REPO_URI="https://github.com/hyprwm/Hyprland.git"
 EGIT_SUBMODULES=('*')
-S="${WORKDIR}/${PN}-source"
 
 KEYWORDS="~amd64"
 LICENSE="BSD"
@@ -95,9 +94,9 @@ pkg_setup() {
 
 src_prepare() {
 	if use video_cards_nvidia; then
-		cd "${S}/subprojects/wlroots" || die
-		eapply "${S}/nix/patches/wlroots-nvidia.patch"
-		cd "${S}" || die
+		cd "subprojects/wlroots" || die
+		eapply "nix/patches/wlroots-nvidia.patch"
+		cd "../.." || die
 	fi
 
 	default
