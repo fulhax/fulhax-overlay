@@ -1,7 +1,7 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-EAPI=7
+EAPI=8
 MODULE_AUTHOR=DSB
 MODULE_VERSION=0.19
 inherit perl-module

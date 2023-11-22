@@ -1,7 +1,7 @@
-EAPI=7
+EAPI=8
 
 [[ ${PV} == *9999 ]] && SCM="git-r3"
-inherit eutils ${SCM}
+inherit ${SCM}
 
 DESCRIPTION="The Comprehensive Kerbal Archive Network"
 HOMEPAGE="https://github.com/KSP-CKAN/CKAN"

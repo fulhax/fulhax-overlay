@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
-inherit eutils git-r3
+EAPI=8
+inherit git-r3
 
 EGIT_REPO_URI="https://github.com/qw3rtman/gg.git"
 

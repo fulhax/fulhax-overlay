@@ -6,8 +6,8 @@
 # Original ebuild by eroen <eroen-overlay@occam.eroen.eu>, 2013
 # Distributed under the terms of the ISC license
 
-EAPI=7
-inherit eutils toolchain-funcs git-r3
+EAPI=8
+inherit toolchain-funcs git-r3
 
 DESCRIPTION="A keyboard-centric VTE-based terminal"
 HOMEPAGE="https://github.com/thestinger/termite"

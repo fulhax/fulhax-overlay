@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="A set of static analysis tools for JavaScript http://drjs.org/"
 HOMEPAGE="http://drjs.org"
@@ -10,7 +10,7 @@ HOMEPAGE="http://drjs.org"
 EGIT_REPO_URI="https://github.com/mozilla/doctorjs"
 EGIT_HAS_SUBMODULES="1"
 
-inherit git-r3 eutils
+inherit git-r3
 
 LICENSE="MPL-1.1"
 SLOT="0"

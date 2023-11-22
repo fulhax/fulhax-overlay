@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 
-inherit git-r3 eutils libtool toolchain-funcs autotools flag-o-matic
+inherit git-r3 libtool toolchain-funcs autotools flag-o-matic
 
 DESCRIPTION="BitTorrent library written in C++ for *nix"
 HOMEPAGE="http://libtorrent.rakshasa.no/"

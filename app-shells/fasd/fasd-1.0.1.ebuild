@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Command-line productivity booster, offers quick access to files and directories, inspired by autojump, z and v."
 HOMEPAGE="https://github.com/clvv/fasd"
