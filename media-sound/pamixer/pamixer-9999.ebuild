@@ -14,8 +14,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="dev-libs/boost
-		media-sound/pulseaudio"
+DEPEND="media-sound/pulseaudio"
 RDEPEND="${DEPEND}"
 
 src_configure() {
