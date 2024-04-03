@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index f45cd20..0cf696b 100644
+index fbf9f4e..8d162f4 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -20,7 +20,7 @@ GTK   = `pkg-config --libs --cflags gtk+-3.0` `pkg-config --libs x11`
