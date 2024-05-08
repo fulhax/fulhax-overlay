@@ -42,7 +42,7 @@ RDEPEND="
 src_unpack() {
 	default
 	if [[ ${PV} == *9999 ]]; then
-		git-r3_checkout
+		git-r3_fetch
 	fi
 }
 
