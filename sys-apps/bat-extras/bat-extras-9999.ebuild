@@ -39,13 +39,6 @@ RDEPEND="
 	virtual/rust[rustfmt(+)]
 "
 
-src_unpack() {
-	default
-	if [[ ${PV} == *9999 ]]; then
-		git-r3_fetch
-	fi
-}
-
 src_prepare() {
 	# remove license
 	rm LICENSE.md || die
