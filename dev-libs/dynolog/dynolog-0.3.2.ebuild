@@ -65,15 +65,6 @@ RDEPEND="${DEPEND}"
 # Partially rust build
 QA_FLAGS_IGNORED=/usr/bin/dyno
 
-PATCHES=(
-	"${FILESDIR}"/${P}-gcc13.patch
-	"${FILESDIR}"/${P}-unbundling.patch
-	"${FILESDIR}"/${P}-noWerror.patch
-	"${FILESDIR}"/${P}-riscv.patch
-	"${FILESDIR}"/${P}-musl.patch
-	"${FILESDIR}"/${P}-libcxx.patch
-)
-
 CMAKE_SKIP_TESTS=( "Defs.CpuSet" "KernelCollecterTest.NetworkStatsTest" )
 
 src_prepare() {
