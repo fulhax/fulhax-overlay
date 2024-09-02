@@ -42,11 +42,11 @@ CRATES="
 	winapi-x86_64-pc-windows-gnu@0.4.0
 "
 
-inherit cargo cmake
+inherit cargo cmake git-r3
 
 DESCRIPTION="Performance monitoring daemon for heterogeneous CPU-GPU systems"
 HOMEPAGE="https://github.com/facebookincubator/dynolog"
-SRC_URI="https://github.com/facebookincubator/dynolog/archive/refs/tags/v${PV}.tar.gz
+EGIT_REPO_URI="https://github.com/facebookincubator/dynolog
 	${CARGO_CRATE_URIS}"
 
 LICENSE="BSD Apache-2.0 Boost-1.0 MIT Unicode-DFS-2016 Unlicense"
@@ -66,28 +66,6 @@ RDEPEND="${DEPEND}"
 QA_FLAGS_IGNORED=/usr/bin/dyno
 
 CMAKE_SKIP_TESTS=( "Defs.CpuSet" "KernelCollecterTest.NetworkStatsTest" )
-
-src_prepare() {
-	sed -i \
-		-e "s:__u64:ino_t:g" \
-		hbt/src/common/System.h \
-		|| die
-	cmake_src_prepare
-	cmake_comment_add_subdirectory third_party/gflags
-	cmake_comment_add_subdirectory third_party/glog
-	cmake_comment_add_subdirectory third_party/pfs
-	cmake_comment_add_subdirectory third_party/json
-	cmake_comment_add_subdirectory third_party/fmt
-	cmake_comment_add_subdirectory third_party/cpr
-	cmake_comment_add_subdirectory third_party/prometheus-cpp
-	cmake_comment_add_subdirectory third_party/DCGM
-	rm -r third_party/googletest || die
-	rm -r third_party/pfs || die
-}
-
-PATCHES=(
-	"${FILESDIR}"/${P}-unbundling.patch
-)
 
 src_configure() {
 	local mycmakeargs=(
