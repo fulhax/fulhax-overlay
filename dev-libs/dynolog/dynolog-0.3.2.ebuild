@@ -46,7 +46,7 @@ inherit cargo cmake
 
 DESCRIPTION="Performance monitoring daemon for heterogeneous CPU-GPU systems"
 HOMEPAGE="https://github.com/facebookincubator/dynolog"
-SRC_URI="https://dev.gentoo.org/~tupone/distfiles/${P}.tar.gz
+SRC_URI="https://github.com/facebookincubator/dynolog/archive/refs/tags/v${PV}.tar.gz
 	${CARGO_CRATE_URIS}"
 
 LICENSE="BSD Apache-2.0 Boost-1.0 MIT Unicode-DFS-2016 Unlicense"
