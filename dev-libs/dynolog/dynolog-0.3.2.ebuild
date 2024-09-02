@@ -76,6 +76,11 @@ src_prepare() {
 	cmake_comment_add_subdirectory third_party/gflags
 	cmake_comment_add_subdirectory third_party/glog
 	cmake_comment_add_subdirectory third_party/pfs
+	cmake_comment_add_subdirectory third_party/json
+	cmake_comment_add_subdirectory third_party/fmt
+	cmake_comment_add_subdirectory third_party/cpr
+	cmake_comment_add_subdirectory third_party/prometheus-cpp
+	cmake_comment_add_subdirectory third_party/DCGM
 	rm -r third_party/googletest || die
 	rm -r third_party/pfs || die
 }
