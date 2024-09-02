@@ -85,9 +85,12 @@ src_prepare() {
 	rm -r third_party/pfs || die
 }
 
+PATCHES=(
+	"${FILESDIR}"/${P}-unbundling.patch
+)
+
 src_configure() {
 	local mycmakeargs=(
-		-DCPR_FORCE_USE_SYSTEM_CURL=ON
 		-DBUILD_TESTS=$(usex test)
 	)
 	cmake_src_configure
