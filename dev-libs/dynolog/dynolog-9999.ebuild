@@ -55,6 +55,7 @@ CRATES="
 
 inherit cargo cmake git-r3
 
+RESTRICT="network-sandbox"
 DESCRIPTION="Performance monitoring daemon for heterogeneous CPU-GPU systems"
 HOMEPAGE="https://github.com/facebookincubator/dynolog"
 EGIT_REPO_URI="https://github.com/facebookincubator/dynolog"
