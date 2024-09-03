@@ -55,7 +55,6 @@ CRATES="
 
 inherit cargo cmake git-r3
 
-RESTRICT="network-sandbox"
 DESCRIPTION="Performance monitoring daemon for heterogeneous CPU-GPU systems"
 HOMEPAGE="https://github.com/facebookincubator/dynolog"
 EGIT_REPO_URI="https://github.com/facebookincubator/dynolog"
@@ -67,7 +66,10 @@ LICENSE="BSD Apache-2.0 Boost-1.0 MIT Unicode-DFS-2016 Unlicense"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
-RESTRICT="!test? ( test )"
+RESTRICT="
+    !test? ( test )
+    network-sandbox
+"
 
 DEPEND="dev-cpp/gflags
 	dev-cpp/gtest
@@ -104,7 +106,7 @@ src_install() {
 	doheader -r dynolog
 	cd ../cli
 	cd cli
-	# cargo_src_install
+	cargo_src_install
 
 	dobin "${BUILD_DIR}"/${PN}/src/${PN}
 }
