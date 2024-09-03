@@ -104,7 +104,6 @@ src_install() {
 	cp dynolog/src/ipcfabric/FabricManager.h \
 		headers/dynolog/src/ipcfabric || die
 	doheader -r dynolog
-	cd ../cli
 	cd cli
 	cargo_src_install
 
