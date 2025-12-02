@@ -36,7 +36,7 @@ IUSE="debug verify-sig"
 RDEPEND="${DEPEND}
 "
 
-BDEPEND=">=sys-kernel/linux-headers-6.18
+BDEPEND=">=sys-kernel/linux-headers-6.16
 	verify-sig? ( >=sec-keys/openpgp-keys-kentoverstreet-20241012 )
 "
 pkg_setup() {
